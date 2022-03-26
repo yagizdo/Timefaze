@@ -1,24 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:pomodoro_app/Providers/theme_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'Screens/homescreen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  var _themeMode = await ThemeProvider().readData('themeMode');
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => ThemeProvider(),
+      builder: (context, snapshot) => PomodoroApp(
+        themeMode: _themeMode,
+      ),
+    ),
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class PomodoroApp extends StatelessWidget {
+  PomodoroApp({Key? key, required this.themeMode}) : super(key: key);
 
-  // This widget is the root of your application.
+  var themeMode;
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Pomodoro App',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomeScreen(),
-    );
+    return Consumer<ThemeProvider>(builder: (context, theme, child) {
+      return MaterialApp(
+        title: 'Pomodoro App',
+        debugShowCheckedModeBanner: false,
+        theme: theme.getTheme(),
+        home: const HomeScreen(),
+      );
+    });
   }
 }

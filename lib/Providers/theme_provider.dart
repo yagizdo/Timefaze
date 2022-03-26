@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fomodoro/Theme/shared_preferences_helper.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:pomodoro_app/Providers/shared_preferences_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeProvider with ChangeNotifier {
@@ -22,8 +22,8 @@ class ThemeProvider with ChangeNotifier {
         style: ElevatedButton.styleFrom(
       primary: Colors.white,
       onPrimary: Colors.red,
-      minimumSize: Size.fromRadius(30),
-      shape: RoundedRectangleBorder(
+      minimumSize: const Size.fromRadius(30),
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(50),
           topRight: Radius.circular(50),
@@ -47,8 +47,8 @@ class ThemeProvider with ChangeNotifier {
         style: ElevatedButton.styleFrom(
       primary: HexColor('#D047FF'),
       onPrimary: Colors.white,
-      minimumSize: Size.fromRadius(30),
-      shape: RoundedRectangleBorder(
+      minimumSize: const Size.fromRadius(30),
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(50),
           topRight: Radius.circular(50),
