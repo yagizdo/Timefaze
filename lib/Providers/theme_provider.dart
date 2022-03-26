@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fomodoro/Theme/shared_preferences_helper.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Providers/shared_preferences_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
