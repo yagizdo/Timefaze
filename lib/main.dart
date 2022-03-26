@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pomodoro_app/Providers/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -25,11 +26,21 @@ class PomodoroApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeProvider>(builder: (context, theme, child) {
-      return MaterialApp(
-        title: 'Pomodoro App',
-        debugShowCheckedModeBanner: false,
-        theme: theme.getTheme(),
-        home: const HomeScreen(),
+      return ScreenUtilInit(
+        designSize: const Size(375, 812),
+        builder: () => MaterialApp(
+          builder: (context, widget) {
+            ScreenUtil.setContext(context);
+            return MediaQuery(
+              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+              child: widget!,
+            );
+          },
+          title: 'Pomodoro App',
+          debugShowCheckedModeBanner: false,
+          theme: theme.lightTheme,
+          home: const HomeScreen(),
+        ),
       );
     });
   }
