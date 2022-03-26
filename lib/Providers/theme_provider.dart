@@ -49,22 +49,6 @@ class ThemeProvider with ChangeNotifier {
     secondaryHeaderColor: HexColor('#D047FF'),
     brightness: Brightness.light,
     scaffoldBackgroundColor: HexColor('#5F5FFF'),
-    // Elevated Button
-    elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-      primary: HexColor('#D047FF'),
-      onPrimary: Colors.white,
-      minimumSize: const Size.fromRadius(30),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(50),
-          topRight: Radius.circular(50),
-          bottomLeft: Radius.circular(50),
-          bottomRight: Radius.circular(50),
-        ),
-      ),
-    )),
-    // Elevated Button
   );
 
   // methods for shared preferences
