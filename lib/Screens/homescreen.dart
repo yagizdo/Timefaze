@@ -76,6 +76,8 @@ class HomeScreen extends StatelessWidget {
                             );
                           }),
                         ),
+                        /*
+                        // Toggle Lang button
                         Padding(
                           padding: EdgeInsets.only(left: 17.w),
                           child: Consumer<ThemeProvider>(
@@ -100,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                               ),
                             );
                           }),
-                        ),
+                        ),*/
                       ],
                     )),
               ),
