@@ -56,7 +56,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                             textAlign: TextAlign.start,
                             style: GoogleFonts.poppins(
                               textStyle: TextStyle(
-                                  fontSize: 20.sp,
+                                  fontSize: 18.sp,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -67,7 +67,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                             style: GoogleFonts.poppins(
                               textStyle: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 20.sp,
+                                  fontSize: 18.sp,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
