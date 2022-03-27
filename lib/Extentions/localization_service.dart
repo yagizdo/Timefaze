@@ -3,12 +3,16 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:get/get.dart';
+import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 class LocalizationService {
   late final Locale locale;
   static late Locale currentLocale;
 
-  LocalizationService(this.locale);
+  LocalizationService(this.locale) {
+    currentLocale = locale;
+  }
 
   static LocalizationService of(BuildContext context) {
     return Localizations.of(context, LocalizationService);
@@ -17,6 +21,7 @@ class LocalizationService {
   late Map<String, String> _localizedString;
 
   Future<void> load() async {
+    print('code ${locale.languageCode}');
     final jsonString =
         await rootBundle.loadString('langs/${locale.languageCode}.json');
 
@@ -34,7 +39,7 @@ class LocalizationService {
     return _localizedString[key];
   }
 
-  static const supportedLocales = [Locale('en', 'US'), Locale('tr', 'TR')];
+  static const supportedLocales = [Locale('en', 'US'), Locale('tr', '')];
 
   static Locale? localeResolutionCallback(
       Locale? locale, Iterable<Locale>? supportedLocales) {
@@ -53,6 +58,7 @@ class LocalizationService {
   static const localizationsDelegate = [
     GlobalMaterialLocalizations.delegate,
     GlobalWidgetsLocalizations.delegate,
+    GlobalCupertinoLocalizations.delegate,
     _delegate
   ];
 }
@@ -63,7 +69,7 @@ class _LocalizationServiceDelegate
 
   @override
   bool isSupported(Locale locale) {
-    return ['en', 'ar'].contains(locale.languageCode);
+    return ['en', 'tr'].contains(locale.languageCode);
   }
 
   @override
@@ -76,5 +82,15 @@ class _LocalizationServiceDelegate
   @override
   bool shouldReload(covariant LocalizationsDelegate<LocalizationService> old) {
     return false;
+  }
+}
+
+class LocalizationController extends GetxController {
+  String currentLanguage = ''.obs.toString();
+
+  void toggleLanguage() {
+    currentLanguage =
+        LocalizationService.currentLocale.languageCode == 'tr' ? 'en' : 'tr';
+    update();
   }
 }

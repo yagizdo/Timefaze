@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:pomodoro_app/Extentions/localization_service.dart';
 import 'package:pomodoro_app/Extentions/t_key.dart';
 import 'package:pomodoro_app/Widgets/HomeScreen/drawer_menu.dart';
 import 'package:provider/provider.dart';
@@ -13,6 +15,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizationController = Get.find<LocalizationController>();
     return Scaffold(
       body: SliderDrawer(
           appBar: SliderAppBar(
@@ -35,7 +38,7 @@ class HomeScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 17.w, top: 15.h),
                           child: Text(
-                            Tkeys.welcomeback.translate(context),
+                            '${Tkeys.welcomeback.translate(context)}Yilmaz',
                             style: TextStyle(
                                 fontSize: 19.sp,
                                 fontWeight: FontWeight.w900,
@@ -57,7 +60,32 @@ class HomeScreen extends StatelessWidget {
                                 });
                               },
                               child: Text(
-                                'Start Pomodoro',
+                                Tkeys.startbutton.translate(context),
+                                style: TextStyle(color: HexColor('#5F5FFF')),
+                              ),
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all(Colors.white),
+                                shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(30.0),
+                                  ),
+                                ),
+                              ),
+                            );
+                          }),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 17.w),
+                          child: Consumer<ThemeProvider>(
+                              builder: (context, theme, child) {
+                            return ElevatedButton(
+                              onPressed: () {
+                                localizationController.toggleLanguage();
+                              },
+                              child: Text(
+                                Tkeys.selectlang.translate(context),
                                 style: TextStyle(color: HexColor('#5F5FFF')),
                               ),
                               style: ButtonStyle(
