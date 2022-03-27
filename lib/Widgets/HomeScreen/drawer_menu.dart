@@ -3,11 +3,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pomodoro_app/Providers/theme_provider.dart';
 import 'package:provider/provider.dart';
 
-class DrawerMenu extends StatelessWidget {
+class DrawerMenu extends StatefulWidget {
   const DrawerMenu({Key? key}) : super(key: key);
 
   @override
+  State<DrawerMenu> createState() => _DrawerMenuState();
+}
+
+class _DrawerMenuState extends State<DrawerMenu> {
+  var themeM = 'light';
+  @override
+  void initState() {
+    super.initState();
+    ThemeProvider().readData('themeMode').then((value) => themeM = value);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    setState(() {});
     return Container(
       color: Theme.of(context).scaffoldBackgroundColor,
       child: SafeArea(
@@ -29,15 +42,25 @@ class DrawerMenu extends StatelessWidget {
                     return IconButton(
                       onPressed: () {
                         ThemeProvider().readData('themeMode').then((value) {
-                          value == 'light'
-                              ? theme.setDarkMode()
-                              : theme.setLightMode();
+                          if (value == 'light') {
+                            theme.setDarkMode();
+                            setState(() {
+                              themeM = 'dark';
+                            });
+                          } else {
+                            theme.setLightMode();
+                            setState(() {
+                              themeM = 'light';
+                            });
+                          }
                         });
                       },
-                      icon: const Icon(
-                        Icons.dark_mode_outlined,
-                        color: Colors.white,
-                      ),
+                      icon: themeM == 'dark'
+                          ? const Icon(Icons.wb_sunny)
+                          : const Icon(
+                              Icons.dark_mode_outlined,
+                              color: Colors.white,
+                            ),
                     );
                   })
                 ],
