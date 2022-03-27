@@ -12,7 +12,7 @@ class DrawerMenu extends StatelessWidget {
       color: Theme.of(context).scaffoldBackgroundColor,
       child: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(left: 20.w),
+          padding: EdgeInsets.only(left: 20.w, top: 15.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
