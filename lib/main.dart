@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pomodoro_app/Extentions/localization_service.dart';
 import 'package:pomodoro_app/Providers/theme_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -39,6 +40,10 @@ class PomodoroApp extends StatelessWidget {
           title: 'Pomodoro App',
           debugShowCheckedModeBanner: false,
           theme: theme.getTheme(),
+          localeResolutionCallback:
+              LocalizationService.localeResolutionCallback,
+          supportedLocales: LocalizationService.supportedLocales,
+          localizationsDelegates: LocalizationService.localizationsDelegate,
           home: const HomeScreen(),
         ),
       );

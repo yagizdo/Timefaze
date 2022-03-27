@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:pomodoro_app/Extentions/t_key.dart';
 import 'package:pomodoro_app/Widgets/HomeScreen/drawer_menu.dart';
 import 'package:provider/provider.dart';
 
@@ -34,7 +35,7 @@ class HomeScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.only(left: 17.w, top: 15.h),
                           child: Text(
-                            'Welcome back, Yilmaz !',
+                            Tkeys.welcomeback.translate(context),
                             style: TextStyle(
                                 fontSize: 19.sp,
                                 fontWeight: FontWeight.w900,
