@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
-import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:pomodoro_app/Extentions/localization_service.dart';
 import 'package:pomodoro_app/Extentions/t_key.dart';
 import 'package:pomodoro_app/Widgets/HomeScreen/drawer_menu.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +13,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final localizationController = Get.find<LocalizationController>();
     return Scaffold(
       body: SliderDrawer(
           appBar: SliderAppBar(
@@ -36,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(left: 17.w, top: 15.h),
+                          padding: EdgeInsets.only(left: 17.w, top: 20.h),
                           child: Text(
                             '${Tkeys.welcomeback.translate(context)}Yilmaz',
                             style: TextStyle(
@@ -46,7 +43,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 17.w),
+                          padding: EdgeInsets.only(left: 17.w, top: 10.h),
                           child: Consumer<ThemeProvider>(
                               builder: (context, theme, child) {
                             return ElevatedButton(
