@@ -15,7 +15,6 @@ class ThemeProvider with ChangeNotifier {
       color: HexColor('#393939'),
       elevation: 0,
     ),
-    textTheme: GoogleFonts.poppinsTextTheme(),
     // Progress
     secondaryHeaderColor: Colors.redAccent,
     progressIndicatorTheme:
@@ -27,7 +26,6 @@ class ThemeProvider with ChangeNotifier {
   );
 
   final lightTheme = ThemeData(
-    textTheme: GoogleFonts.poppinsTextTheme(),
     appBarTheme: AppBarTheme(
       color: HexColor('#5F5FFF'),
       elevation: 0,
@@ -80,6 +78,7 @@ class ThemeProvider with ChangeNotifier {
         _themeData = lightTheme;
       } else {
         //print('setting dark theme');
+
         _themeData = darkTheme;
       }
       notifyListeners();

@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
-import 'package:hexcolor/hexcolor.dart';
-import 'package:pomodoro_app/Extentions/t_key.dart';
 import 'package:pomodoro_app/Widgets/HomeScreen/drawer_menu.dart';
-import 'package:provider/provider.dart';
-
-import '../Providers/theme_provider.dart';
+import 'package:pomodoro_app/Widgets/HomeScreen/welcome_back_comp.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -25,83 +21,9 @@ class HomeScreen extends StatelessWidget {
           slider: const DrawerMenu(),
           child: Column(
             children: [
-              Expanded(
+              const Expanded(
                 flex: 2,
-                child: Container(
-                    alignment: Alignment.topLeft,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 17.w, top: 20.h),
-                          child: Text(
-                            '${Tkeys.welcomeback.translate(context)}Yilmaz',
-                            style: TextStyle(
-                                fontSize: 19.sp,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.white),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(left: 17.w, top: 10.h),
-                          child: Consumer<ThemeProvider>(
-                              builder: (context, theme, child) {
-                            return ElevatedButton(
-                              onPressed: () {
-                                ThemeProvider()
-                                    .readData('themeMode')
-                                    .then((value) {
-                                  value == 'light'
-                                      ? theme.setDarkMode()
-                                      : theme.setLightMode();
-                                });
-                              },
-                              child: Text(
-                                Tkeys.startbutton.translate(context),
-                                style: TextStyle(color: HexColor('#5F5FFF')),
-                              ),
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                ),
-                              ),
-                            );
-                          }),
-                        ),
-                        /*
-                        // Toggle Lang button
-                        Padding(
-                          padding: EdgeInsets.only(left: 17.w),
-                          child: Consumer<ThemeProvider>(
-                              builder: (context, theme, child) {
-                            return ElevatedButton(
-                              onPressed: () {
-                                localizationController.toggleLanguage();
-                              },
-                              child: Text(
-                                Tkeys.selectlang.translate(context),
-                                style: TextStyle(color: HexColor('#5F5FFF')),
-                              ),
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                ),
-                              ),
-                            );
-                          }),
-                        ),*/
-                      ],
-                    )),
+                child: WelcomeBackComp(),
               ),
               Expanded(
                 flex: 7,
