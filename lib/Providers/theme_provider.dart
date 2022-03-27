@@ -74,7 +74,7 @@ class ThemeProvider with ChangeNotifier {
 
   ThemeProvider() {
     readData('themeMode').then((value) {
-      print('Selected Theme Data from Local Storage : ${value.toString()}');
+      // print('Selected Theme Data from Local Storage : ${value.toString()}');
       var themeMode = value ?? 'light';
       if (themeMode == 'light') {
         _themeData = lightTheme;
