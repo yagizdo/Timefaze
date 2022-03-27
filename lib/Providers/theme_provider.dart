@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Providers/shared_preferences_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -10,54 +11,33 @@ class ThemeProvider with ChangeNotifier {
   ThemeData? getTheme() => _themeData;
 
   final darkTheme = ThemeData(
-    splashColor: Colors.pink,
+    appBarTheme: AppBarTheme(
+      color: HexColor('#393939'),
+      elevation: 0,
+    ),
+    textTheme: GoogleFonts.poppinsTextTheme(),
     // Progress
     secondaryHeaderColor: Colors.redAccent,
-    progressIndicatorTheme: ProgressIndicatorThemeData(color: Colors.white),
+    progressIndicatorTheme:
+        const ProgressIndicatorThemeData(color: Colors.white),
     primaryColor: Colors.white,
-    scaffoldBackgroundColor: Colors.red,
+    // Sccafold
+    scaffoldBackgroundColor: HexColor('#393939'),
     brightness: Brightness.dark,
-    // Elevated Button
-    elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-      primary: Colors.white,
-      onPrimary: Colors.red,
-      minimumSize: const Size.fromRadius(30),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(50),
-          topRight: Radius.circular(50),
-          bottomLeft: Radius.circular(50),
-          bottomRight: Radius.circular(50),
-        ),
-      ),
-    )),
   );
 
   final lightTheme = ThemeData(
+    textTheme: GoogleFonts.poppinsTextTheme(),
+    appBarTheme: AppBarTheme(
+      color: HexColor('#5F5FFF'),
+      elevation: 0,
+    ),
     progressIndicatorTheme:
         ProgressIndicatorThemeData(color: Colors.grey.shade300),
     // Progress Border
     secondaryHeaderColor: HexColor('#D047FF'),
-    primaryColor: Colors.black,
-    brightness: Brightness.dark,
-    scaffoldBackgroundColor: Colors.white,
-    // Elevated Button
-    elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-      primary: HexColor('#D047FF'),
-      onPrimary: Colors.white,
-      minimumSize: const Size.fromRadius(30),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(50),
-          topRight: Radius.circular(50),
-          bottomLeft: Radius.circular(50),
-          bottomRight: Radius.circular(50),
-        ),
-      ),
-    )),
-    // Elevated Button
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: HexColor('#5F5FFF'),
   );
 
   // methods for shared preferences
