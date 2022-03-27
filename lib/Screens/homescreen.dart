@@ -15,6 +15,8 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: SliderDrawer(
           appBar: SliderAppBar(
+            title: const Text(''),
+            drawerIconColor: Colors.white,
             appBarColor: Theme.of(context).appBarTheme.backgroundColor!,
           ),
           slider: const DrawerMenu(),
