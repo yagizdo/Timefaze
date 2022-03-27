@@ -11,6 +11,10 @@ class ThemeProvider with ChangeNotifier {
   ThemeData? getTheme() => _themeData;
 
   final darkTheme = ThemeData(
+    appBarTheme: AppBarTheme(
+      color: HexColor('#393939'),
+      elevation: 0,
+    ),
     textTheme: GoogleFonts.poppinsTextTheme(),
     // Progress
     secondaryHeaderColor: Colors.redAccent,
@@ -20,21 +24,6 @@ class ThemeProvider with ChangeNotifier {
     // Sccafold
     scaffoldBackgroundColor: HexColor('#393939'),
     brightness: Brightness.dark,
-    // Elevated Button
-    elevatedButtonTheme: ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-      primary: Colors.white,
-      onPrimary: HexColor('#393939'),
-      minimumSize: const Size.fromRadius(30),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(50),
-          topRight: Radius.circular(50),
-          bottomLeft: Radius.circular(50),
-          bottomRight: Radius.circular(50),
-        ),
-      ),
-    )),
   );
 
   final lightTheme = ThemeData(

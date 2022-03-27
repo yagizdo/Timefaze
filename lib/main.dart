@@ -38,7 +38,7 @@ class PomodoroApp extends StatelessWidget {
           },
           title: 'Pomodoro App',
           debugShowCheckedModeBanner: false,
-          theme: theme.lightTheme,
+          theme: theme.getTheme(),
           home: const HomeScreen(),
         ),
       );
