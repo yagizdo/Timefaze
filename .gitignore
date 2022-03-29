@@ -30,6 +30,8 @@
 .pub/
 build/
 .flutter-plugins-dependencies
+.TODO
+.todo
 
 # Android related
 **/android/**/gradle-wrapper.jar
