@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
@@ -5,8 +7,21 @@ import 'package:pomodoro_app/Widgets/HomeScreen/drawer_menu.dart';
 
 import '../Widgets/HomeScreen/pomodoro_timer_comp.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late final String defaultLocale;
+  @override
+  void initState() {
+    super.initState();
+    defaultLocale = Platform.localeName;
+    print('sj : $defaultLocale');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +37,11 @@ class HomeScreen extends StatelessWidget {
           slider: const DrawerMenu(),
           child: Column(
             children: [
-              const Expanded(
+              Expanded(
                 flex: 2,
-                child: PomodoroComp(),
+                child: PomodoroComp(
+                  lang: defaultLocale,
+                ),
               ),
               Expanded(
                 flex: 6,

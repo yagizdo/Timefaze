@@ -6,7 +6,8 @@ import 'package:hexcolor/hexcolor.dart';
 import '../../Extentions/t_key.dart';
 
 class PomodoroComp extends StatelessWidget {
-  const PomodoroComp({Key? key}) : super(key: key);
+  PomodoroComp({Key? key, required this.lang}) : super(key: key);
+  String lang;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class PomodoroComp extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(bottom: 11.h),
           child: SizedBox(
-            width: 170.w,
+            width: lang.contains('tr_US') ? 195.w : 170.w,
             height: 36.h,
             child: ElevatedButton(
                 style: ButtonStyle(
