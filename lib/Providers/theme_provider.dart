@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Providers/shared_preferences_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,9 +19,9 @@ class ThemeProvider with ChangeNotifier {
     progressIndicatorTheme:
         const ProgressIndicatorThemeData(color: Colors.white),
     primaryColor: Colors.white,
-    // Sccafold
+    // Scafold
     scaffoldBackgroundColor: HexColor('#393939'),
-    brightness: Brightness.dark,
+    brightness: Brightness.light,
   );
 
   final lightTheme = ThemeData(

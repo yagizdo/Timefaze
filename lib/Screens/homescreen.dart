@@ -6,6 +6,7 @@ import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:pomodoro_app/Widgets/HomeScreen/drawer_menu.dart';
 
 import '../Widgets/HomeScreen/pomodoro_timer_comp.dart';
+import '../Widgets/HomeScreen/tasks_section/tasks_list.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -53,6 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       topLeft: Radius.circular(20.0),
                     ),
                   ),
+                  child: const TasksList(),
                 ),
               ),
             ],
