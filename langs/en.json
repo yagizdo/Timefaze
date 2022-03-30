@@ -2,5 +2,6 @@
   "welcomeback": "Welcome Back ",
   "startbutton": "Start Pomodoro ",
   "homepage": "HomePage",
-  "settings": "Settings"
+  "settings": "Settings",
+  "stopbutton": "Stop Pomodoro"
 }

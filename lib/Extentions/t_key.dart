@@ -1,6 +1,6 @@
 import 'package:pomodoro_app/Extentions/localization_service.dart';
 
-enum Tkeys { welcomeback, startbutton, homepage, settings }
+enum Tkeys { welcomeback, startbutton, homepage, settings, stopbutton }
 
 extension TKeysExtention on Tkeys {
   String get _string => toString().split('.')[1];
