@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:roundcheckbox/roundcheckbox.dart';
 
 class TaskCard extends StatelessWidget {
   const TaskCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    bool checkBoxCheck = false;
     return Padding(
       padding: EdgeInsets.only(bottom: 10.h),
       child: Align(
         alignment: Alignment.center,
         child: Container(
           width: 350.w,
+          height: 55.h,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
@@ -25,9 +28,24 @@ class TaskCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Checkbox(value: false, onChanged: (value) {}),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10.w, right: 10.w),
+                    child: RoundCheckBox(
+                      onTap: (selected) {
+                        selected = checkBoxCheck;
+                      },
+                      isChecked: checkBoxCheck,
+                      size: 35,
+                      checkedColor: Theme.of(context).scaffoldBackgroundColor,
+                      uncheckedColor: Colors.white,
+                      border: Border.all(color: Colors.black, width: 1),
+                    ),
+                  ),
+                  // Time and Title
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text('UX Articles reading'),
@@ -36,6 +54,7 @@ class TaskCard extends StatelessWidget {
                   ),
                 ],
               ),
+              // Play - Pause Button
               MaterialButton(
                 shape: const CircleBorder(),
                 textColor: Colors.white,
