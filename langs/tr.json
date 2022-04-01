@@ -3,5 +3,6 @@
   "startbutton": "Pomodoro Başlat ",
   "homepage": "AnaSayfa",
   "settings": "Ayarlar",
-  "stopbutton": "Pomodoroyu Durdur"
+  "stopbutton": "Pomodoroyu Durdur",
+  "pausebutton": "Pomodoroyu Resetle"
 }

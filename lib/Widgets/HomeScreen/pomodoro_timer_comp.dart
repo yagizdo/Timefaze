@@ -23,41 +23,87 @@ class PomodoroComp extends StatelessWidget {
                 fontWeight: FontWeight.bold),
           ),
         ),
-        Padding(
-          padding: EdgeInsets.only(bottom: 11.h),
-          child: SizedBox(
-            width: lang.contains('tr_US') ? 195.w : 170.w,
-            height: 36.h,
-            child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all<Color>(Colors.white),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                  ),
-                ),
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    const Icon(
-                      Icons.stop,
-                      color: Colors.red,
-                    ),
-                    Text(
-                      Tkeys.stopbutton.translate(context),
-                      style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                            color: HexColor('#5F5FFF'),
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w500),
+
+        // Buttons Row
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            // Pause Pomodoro Row
+            Padding(
+              padding: EdgeInsets.only(bottom: 11.h),
+              child: SizedBox(
+                width: lang.contains('tr_US') ? 195.w : 170.w,
+                height: 36.h,
+                child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
                       ),
                     ),
-                  ],
-                )),
-          ),
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        const Icon(
+                          Icons.pause,
+                          color: Colors.red,
+                        ),
+                        Text(
+                          Tkeys.pausebutton.translate(context),
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                                color: HexColor('#5F5FFF'),
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ],
+                    )),
+              ),
+            ),
+
+            // Stop Pomodoro Row
+            Padding(
+              padding: EdgeInsets.only(bottom: 11.h),
+              child: SizedBox(
+                width: lang.contains('tr_US') ? 195.w : 170.w,
+                height: 36.h,
+                child: ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all<Color>(Colors.white),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        const Icon(
+                          Icons.stop,
+                          color: Colors.red,
+                        ),
+                        Text(
+                          Tkeys.stopbutton.translate(context),
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                                color: HexColor('#5F5FFF'),
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ],
+                    )),
+              ),
+            ),
+          ],
         )
       ],
     );
