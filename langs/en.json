@@ -3,6 +3,6 @@
   "startbutton": "Start Pomodoro ",
   "homepage": "HomePage",
   "settings": "Settings",
-  "stopbutton": "Stop Pomodoro",
-  "pausebutton": "Pause Pomodoro"
+  "stopbutton": "Reset",
+  "pausebutton": "Pause"
 }
