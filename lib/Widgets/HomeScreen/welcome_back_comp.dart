@@ -20,10 +20,11 @@ class WelcomeBackComp extends StatelessWidget {
               child: Text(
                 '${Tkeys.welcomeback.translate(context)},Yilmaz',
                 style: GoogleFonts.poppins(
-                    textStyle: TextStyle(
-                        fontSize: 19.sp,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white)),
+                  textStyle: TextStyle(
+                      fontSize: 19.sp,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
               ),
             ),
             Padding(
