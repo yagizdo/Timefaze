@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -26,14 +27,14 @@ class PomodoroComp extends StatelessWidget {
 
         // Buttons Row
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Pause Pomodoro Row
             Padding(
-              padding: EdgeInsets.only(bottom: 11.h),
+              padding: EdgeInsets.only(bottom: 11.h, right: 10.w),
               child: SizedBox(
-                width: lang.contains('tr_US') ? 195.w : 170.w,
-                height: 36.h,
+                width: 110.w,
+                height: 40.h,
                 child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
@@ -46,11 +47,11 @@ class PomodoroComp extends StatelessWidget {
                     ),
                     onPressed: () {},
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        const Icon(
-                          Icons.pause,
-                          color: Colors.red,
+                        SvgPicture.asset(
+                          'lib/Assets/icons/pauseicon.svg',
+                          width: 12,
                         ),
                         Text(
                           Tkeys.pausebutton.translate(context),
@@ -70,8 +71,8 @@ class PomodoroComp extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(bottom: 11.h),
               child: SizedBox(
-                width: lang.contains('tr_US') ? 195.w : 170.w,
-                height: 36.h,
+                width: 110.w,
+                height: 40.h,
                 child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor:
@@ -84,11 +85,11 @@ class PomodoroComp extends StatelessWidget {
                     ),
                     onPressed: () {},
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        const Icon(
-                          Icons.stop,
-                          color: Colors.red,
+                        SvgPicture.asset(
+                          'lib/Assets/icons/stopicon.svg',
+                          width: 12,
                         ),
                         Text(
                           Tkeys.stopbutton.translate(context),
