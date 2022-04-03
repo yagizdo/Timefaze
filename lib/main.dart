@@ -44,7 +44,7 @@ class PomodoroApp extends StatelessWidget {
                       child: widget!,
                     );
                   },
-                  title: 'Pomodoro App',
+                  title: 'Timefaze',
                   debugShowCheckedModeBanner: false,
                   theme: theme.getTheme(),
                   locale: controller.currentLanguage != ''
