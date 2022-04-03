@@ -15,8 +15,6 @@ class DrawerMenu extends StatefulWidget {
 }
 
 class _DrawerMenuState extends State<DrawerMenu> {
-  bool test = false;
-
   @override
   Widget build(BuildContext context) {
     List<MenuItem> menuItems = [

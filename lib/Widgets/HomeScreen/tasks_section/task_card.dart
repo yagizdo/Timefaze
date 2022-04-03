@@ -11,7 +11,7 @@ class TaskCard extends StatefulWidget {
 }
 
 class _TaskCardState extends State<TaskCard> {
-  bool checkboxbool = true;
+  bool checkboxbool = false;
   @override
   Widget build(BuildContext context) {
     return Container(
