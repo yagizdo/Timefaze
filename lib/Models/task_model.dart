@@ -3,5 +3,5 @@ class Task {
   String time;
   bool completed;
 
-  Task(this.title,this.time,this.completed)
+  Task(this.title, this.time, this.completed);
 }

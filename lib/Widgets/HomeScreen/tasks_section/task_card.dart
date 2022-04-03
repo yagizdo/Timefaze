@@ -22,7 +22,7 @@ class _TaskCardState extends State<TaskCard> {
           Row(
             children: [
               Transform.scale(
-                scale: 1.3,
+                scale: 1.35,
                 child: Checkbox(
                   checkColor: Colors.white,
                   fillColor: checkboxbool == false
@@ -56,6 +56,7 @@ class _TaskCardState extends State<TaskCard> {
             ],
           ),
           checkboxbool == false
+              // Play  button
               ? MaterialButton(
                   shape: const CircleBorder(),
                   elevation: 0,
@@ -66,6 +67,7 @@ class _TaskCardState extends State<TaskCard> {
                   child: Icon(Icons.play_arrow,
                       color: Theme.of(context).scaffoldBackgroundColor),
                 )
+              // Restart Button
               : MaterialButton(
                   shape: const CircleBorder(),
                   elevation: 0,
