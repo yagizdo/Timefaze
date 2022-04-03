@@ -1,72 +1,85 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:roundcheckbox/roundcheckbox.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:hexcolor/hexcolor.dart';
 
-class TaskCard extends StatelessWidget {
+class TaskCard extends StatefulWidget {
   const TaskCard({Key? key}) : super(key: key);
 
   @override
+  State<TaskCard> createState() => _TaskCardState();
+}
+
+class _TaskCardState extends State<TaskCard> {
+  bool checkboxbool = true;
+  @override
   Widget build(BuildContext context) {
-    bool checkBoxCheck = false;
-    return Padding(
-      padding: EdgeInsets.only(bottom: 10.h),
-      child: Align(
-        alignment: Alignment.center,
-        child: Container(
-          width: 350.w,
-          height: 55.h,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  spreadRadius: 1)
-            ],
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // Checkbox and Task-time Row
+          Row(
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 10.w, right: 10.w),
-                    child: RoundCheckBox(
-                      onTap: (selected) {
-                        selected = checkBoxCheck;
-                      },
-                      isChecked: checkBoxCheck,
-                      size: 35,
-                      checkedColor: Theme.of(context).scaffoldBackgroundColor,
-                      uncheckedColor: Colors.white,
-                      border: Border.all(color: Colors.black, width: 1),
+              Transform.scale(
+                scale: 1.3,
+                child: Checkbox(
+                  checkColor: Colors.white,
+                  fillColor: checkboxbool == false
+                      ? MaterialStateProperty.all<Color>(Colors.grey)
+                      : MaterialStateProperty.all<Color>(
+                          Theme.of(context).scaffoldBackgroundColor),
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(5.0),
                     ),
                   ),
-                  // Time and Title
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text('UX Articles reading'),
-                      Text('1h 25 mins'),
-                    ],
+                  value: checkboxbool,
+                  onChanged: (bool? value) {},
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Task',
+                    style: TextStyle(
+                        color: Theme.of(context).scaffoldBackgroundColor,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    '1hr 25 mins',
+                    style: TextStyle(color: Colors.grey.shade600),
                   ),
                 ],
               ),
-              // Play - Pause Button
-              MaterialButton(
-                shape: const CircleBorder(),
-                textColor: Colors.white,
-                color: Theme.of(context).scaffoldBackgroundColor,
-                onPressed: () {},
-                child: const Icon(
-                  Icons.play_arrow,
-                ),
-              )
             ],
           ),
-        ),
+          checkboxbool == false
+              ? MaterialButton(
+                  shape: const CircleBorder(),
+                  elevation: 0,
+                  color: Theme.of(context)
+                      .scaffoldBackgroundColor
+                      .withOpacity(0.2),
+                  onPressed: () {},
+                  child: Icon(Icons.play_arrow,
+                      color: Theme.of(context).scaffoldBackgroundColor),
+                )
+              : MaterialButton(
+                  shape: const CircleBorder(),
+                  elevation: 0,
+                  color: HexColor('#FFBF5F').withOpacity(0.2),
+                  onPressed: () {},
+                  child: SvgPicture.asset(
+                    'lib/Assets/icons/againicon.svg',
+                    width: 18.w,
+                    placeholderBuilder: (BuildContext context) => Container(
+                      child: const CircularProgressIndicator(),
+                    ),
+                  ),
+                )
+        ],
       ),
     );
   }
