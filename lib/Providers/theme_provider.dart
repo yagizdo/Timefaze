@@ -11,7 +11,7 @@ class ThemeProvider with ChangeNotifier {
 
   final darkTheme = ThemeData(
     appBarTheme: AppBarTheme(
-      color: HexColor('#393939'),
+      color: HexColor('#323232'),
       elevation: 0,
     ),
     // Progress
@@ -20,7 +20,7 @@ class ThemeProvider with ChangeNotifier {
         const ProgressIndicatorThemeData(color: Colors.white),
     primaryColor: Colors.white,
     // Scafold
-    scaffoldBackgroundColor: HexColor('#393939'),
+    scaffoldBackgroundColor: HexColor('#323232'),
     brightness: Brightness.light,
   );
 
