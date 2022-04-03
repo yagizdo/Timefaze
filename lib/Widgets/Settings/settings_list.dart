@@ -16,16 +16,6 @@ class _SettingsListState extends State<SettingsList> {
   @override
   Widget build(BuildContext context) {
     List<SettingsItem> items = [
-      // Name change setting
-      SettingsItem(
-        Icons.person,
-        'Yilmaz Yagiz Dokumaci',
-        TextButton(
-          child: Text('Change'),
-          onPressed: () {},
-        ),
-      ),
-
       // Pomodoro Time
       SettingsItem(
         Icons.alarm,
