@@ -1,4 +1,4 @@
-# Flutter - Pomodoro App
+# Timefaze
 
 Pomodoro App I made with Flutter.
 
@@ -19,13 +19,13 @@ Soon..
 Clone the project
 
 ```bash
-  git clone https://github.com/yagizdo/pomodoro-app
+  git clone https://github.com/yagizdo/Timefaze
 ```
 
 Go to the project directory
 
 ```bash
-  cd Pomodoro-App
+  cd Timefaze
 ```
 
 Install dependencies
