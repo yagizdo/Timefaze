@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pomodoro_app/Extentions/t_key.dart';
-import 'package:pomodoro_app/Screens/homescreen.dart';
 
+import '../../Screens/homescreen.dart';
 import '../../Screens/settings.dart';
 import 'menu_item.dart';
 
@@ -77,14 +77,16 @@ class _DrawerMenuState extends State<DrawerMenu> {
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        menuItems[index].title == 'HomePage'
+                        menuItems[index].title ==
+                                Tkeys.homepage.translate(context)
                             ? Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => HomeScreen(),
                                 ),
                               )
-                            : menuItems[index].title == 'Settings'
+                            : menuItems[index].title ==
+                                    Tkeys.settings.translate(context)
                                 ? Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
