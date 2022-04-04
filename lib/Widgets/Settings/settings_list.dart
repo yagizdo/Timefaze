@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_picker/Picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -13,6 +14,7 @@ class SettingsList extends StatefulWidget {
 
 class _SettingsListState extends State<SettingsList> {
   final dropdownItemList = ['Marimba', 'item 2', 'item 3'];
+  Duration _duration = Duration(minutes: 25);
   String? value;
   @override
   Widget build(BuildContext context) {
@@ -77,23 +79,51 @@ class _SettingsListState extends State<SettingsList> {
       // Pomodoro Time
       SettingsItem(
         'Pomodoro Time',
-        Container(
-          height: 30.h,
-          width: 100.w,
-          decoration: BoxDecoration(
-            color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.2),
-            borderRadius: const BorderRadius.all(
-              Radius.circular(6),
+        GestureDetector(
+          onTap: () {
+            Picker(
+              height: 140,
+              itemExtent: 40,
+              adapter: NumberPickerAdapter(data: <NumberPickerColumn>[
+                NumberPickerColumn(
+                    initValue: _duration.inMinutes,
+                    jump: 5,
+                    begin: 15,
+                    end: 90,
+                    suffix: const Text(' Minutes')),
+              ]),
+              hideHeader: true,
+              confirmText: 'OK',
+              confirmTextStyle:
+                  TextStyle(inherit: false, color: Colors.red, fontSize: 18.sp),
+              title: const Text('Select Pomodoro Time'),
+              selectedTextStyle: TextStyle(color: Colors.blue),
+              onConfirm: (Picker picker, List<int> value) {
+                // You get your duration here
+                setState(() {
+                  _duration = Duration(minutes: picker.getSelectedValues()[0]);
+                });
+              },
+            ).showDialog(context);
+          },
+          child: Container(
+            height: 30.h,
+            width: 100.w,
+            decoration: BoxDecoration(
+              color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.2),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(6),
+              ),
             ),
-          ),
-          child: Center(
-            child: Text(
-              '25:00',
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  fontSize: 12.sp,
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  fontWeight: FontWeight.w500,
+            child: Center(
+              child: Text(
+                '${_duration.inMinutes}:00',
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                    fontSize: 12.sp,
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
             ),
