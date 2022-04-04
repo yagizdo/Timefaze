@@ -23,7 +23,7 @@ class ProfileComp extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: EdgeInsets.only(left: 10.w, right: 10.w),
+              padding: EdgeInsets.only(left: 10.w, right: 10.w, top: 10.h),
               child: Text(
                 'Yilmaz Yagiz Dokumaci',
                 style: GoogleFonts.poppins(
@@ -34,7 +34,10 @@ class ProfileComp extends StatelessWidget {
                 ),
               ),
             ),
-            SvgPicture.asset('lib/Assets/icons/editicon.svg'),
+            Padding(
+              padding: EdgeInsets.only(top: 10.h),
+              child: SvgPicture.asset('lib/Assets/icons/editicon.svg'),
+            ),
           ],
         )
       ],

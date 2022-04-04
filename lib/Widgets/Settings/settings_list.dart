@@ -16,6 +16,7 @@ class _SettingsListState extends State<SettingsList> {
   final dropdownItemList = ['Marimba', 'item 2', 'item 3'];
   Duration _durationPomotime = Duration(minutes: 25);
   Duration _durationBreaktime = Duration(minutes: 5);
+  bool checkboxbool = false;
   String? value;
   @override
   Widget build(BuildContext context) {
@@ -62,18 +63,44 @@ class _SettingsListState extends State<SettingsList> {
       // Auto start breaks?
       SettingsItem(
         'Auto start Breaks?',
-        Checkbox(
-          value: false,
-          onChanged: (bool? value) {},
+        Transform.scale(
+          scale: 1.35,
+          child: Checkbox(
+            checkColor: Colors.white,
+            fillColor: checkboxbool == false
+                ? MaterialStateProperty.all<Color>(Colors.grey)
+                : MaterialStateProperty.all<Color>(
+                    Theme.of(context).scaffoldBackgroundColor),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(5.0),
+              ),
+            ),
+            value: checkboxbool,
+            onChanged: (bool? value) {},
+          ),
         ),
       ),
 
       // Auto start Tasks?
       SettingsItem(
         'Auto start Tasks?',
-        Checkbox(
-          value: false,
-          onChanged: (bool? value) {},
+        Transform.scale(
+          scale: 1.35,
+          child: Checkbox(
+            checkColor: Colors.white,
+            fillColor: checkboxbool == false
+                ? MaterialStateProperty.all<Color>(Colors.grey)
+                : MaterialStateProperty.all<Color>(
+                    Theme.of(context).scaffoldBackgroundColor),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(5.0),
+              ),
+            ),
+            value: checkboxbool,
+            onChanged: (bool? value) {},
+          ),
         ),
       ),
 
