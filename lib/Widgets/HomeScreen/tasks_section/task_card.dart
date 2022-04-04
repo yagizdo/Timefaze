@@ -4,14 +4,29 @@ import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class TaskCard extends StatefulWidget {
-  const TaskCard({Key? key}) : super(key: key);
+  TaskCard(
+      {Key? key,
+      required this.title,
+      required this.time,
+      required this.checkbool})
+      : super(key: key);
 
+  String title;
+  String time;
+  bool checkbool;
   @override
   State<TaskCard> createState() => _TaskCardState();
 }
 
 class _TaskCardState extends State<TaskCard> {
-  bool checkboxbool = false;
+  bool? checkboxbool;
+
+  @override
+  void initState() {
+    super.initState();
+    checkboxbool = widget.checkbool;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,13 +57,13 @@ class _TaskCardState extends State<TaskCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Task',
+                    widget.title,
                     style: TextStyle(
                         color: Theme.of(context).scaffoldBackgroundColor,
                         fontWeight: FontWeight.w500),
                   ),
                   Text(
-                    '1hr 25 mins',
+                    widget.time,
                     style: TextStyle(color: Colors.grey.shade600),
                   ),
                 ],

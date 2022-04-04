@@ -25,12 +25,41 @@ class TasksList extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: ListView.builder(
-              padding: EdgeInsets.only(bottom: 30.h, top: 5.h),
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return TaskCard();
-              }),
+          child: ListView(
+            padding: EdgeInsets.only(bottom: 30.h, top: 5.h),
+            children: [
+              TaskCard(
+                title: 'Learn BloC',
+                time: '1hr 25 mins',
+                checkbool: false,
+              ),
+              TaskCard(
+                title: 'Finish new UI',
+                time: '0hr 45 mins',
+                checkbool: true,
+              ),
+              TaskCard(
+                title: 'Add Easylocalization',
+                time: '1hr 25 mins',
+                checkbool: false,
+              ),
+              TaskCard(
+                title: 'Publish custom time picker',
+                time: '10hr 55 mins',
+                checkbool: false,
+              ),
+              TaskCard(
+                title: 'Post the new UI on twitter',
+                time: '0r 10 mins',
+                checkbool: true,
+              ),
+              TaskCard(
+                title: 'Follow => twitter.com/yagizdo',
+                time: '3hr 45 mins',
+                checkbool: true,
+              ),
+            ],
+          ),
         ),
       ],
     );
