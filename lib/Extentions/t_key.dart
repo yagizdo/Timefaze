@@ -6,7 +6,13 @@ enum Tkeys {
   homepage,
   settings,
   stopbutton,
-  pausebutton
+  pausebutton,
+  todolist,
+  alarmsound,
+  autostartbreaks,
+  autostarttasks,
+  pomotime,
+  breaktime,
 }
 
 extension TKeysExtention on Tkeys {

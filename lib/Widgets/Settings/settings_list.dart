@@ -3,6 +3,7 @@ import 'package:flutter_picker/Picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:pomodoro_app/Extentions/t_key.dart';
 import 'package:pomodoro_app/Widgets/Settings/settings_item.dart';
 
 class SettingsList extends StatefulWidget {
@@ -23,7 +24,7 @@ class _SettingsListState extends State<SettingsList> {
     List<SettingsItem> items = [
       // Alarm Sound
       SettingsItem(
-        'Alarm Sound',
+        Tkeys.alarmsound.translate(context),
         Container(
           height: 30.h,
           width: 100.w,
@@ -62,7 +63,7 @@ class _SettingsListState extends State<SettingsList> {
 
       // Auto start breaks?
       SettingsItem(
-        'Auto start Breaks?',
+        Tkeys.autostartbreaks.translate(context),
         Transform.scale(
           scale: 1.35,
           child: Checkbox(
@@ -84,7 +85,7 @@ class _SettingsListState extends State<SettingsList> {
 
       // Auto start Tasks?
       SettingsItem(
-        'Auto start Tasks?',
+        Tkeys.autostarttasks.translate(context),
         Transform.scale(
           scale: 1.35,
           child: Checkbox(
@@ -106,7 +107,7 @@ class _SettingsListState extends State<SettingsList> {
 
       // Pomodoro Time
       SettingsItem(
-        'Pomodoro Time',
+        Tkeys.pomotime.translate(context),
         GestureDetector(
           onTap: () {
             Picker(
@@ -162,7 +163,7 @@ class _SettingsListState extends State<SettingsList> {
 
       // Break Time
       SettingsItem(
-        'Break Time',
+        Tkeys.breaktime.translate(context),
         GestureDetector(
           onTap: () {
             Picker(

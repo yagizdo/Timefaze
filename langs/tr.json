@@ -4,5 +4,12 @@
   "homepage": "AnaSayfa",
   "settings": "Ayarlar",
   "stopbutton": "Resetle",
-  "pausebutton": "Durdur"
+  "pausebutton": "Durdur",
+  "todolist": "Yapılacaklar Listesi",
+
+  "alarmsound": "Alarm Sesi",
+  "autostartbreaks": "Molayı otomatik başlat?",
+  "autostarttasks": "Görevleri otomatik başlat?",
+  "pomotime": "Pomodoro Süresi",
+  "breaktime": "Mola Süresi"
 }

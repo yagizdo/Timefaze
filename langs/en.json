@@ -4,5 +4,13 @@
   "homepage": "HomePage",
   "settings": "Settings",
   "stopbutton": "Reset",
-  "pausebutton": "Pause"
+  "pausebutton": "Pause",
+  "todolist": "To-do List",
+
+
+  "alarmsound": "Alarm Sound",
+  "autostartbreaks": "Auto start Breaks?",
+  "autostarttasks": "Auto start Tasks?",
+  "pomotime": "Pomodoro Time",
+  "breaktime": "Break Time"
 }
