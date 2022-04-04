@@ -12,7 +12,7 @@ Soon..
 Soon..
 <!-- <a href='https://play.google.com/store/apps/details?id=com.yagizdokumaci.todo_app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
    <img alt='Get it on Google Play' width="250" height="100" src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a>
--->   
+-->
 
 ## Run Locally
 
@@ -68,11 +68,11 @@ Soon..
 
 ## Screenshots
 
-### Home Screen - Dark Mode
-<img align="center" width="300" height="700" src="screenshots/homescreen.png">
+### Home Screen - Light Mode
+<img align="center" width="350" height="750" src="screenshots/homescreen.png">
 
-### Drawer Menu - Light Mode
-<img align="center" width="300" height="700" src="screenshots/drawermenu.png">
+### Settings - Dark Mode
+<img align="center" width="350" height="750" src="screenshots/settings.png">
 
 
 ## Contributing
