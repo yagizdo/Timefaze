@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Widgets/Settings/settings_item.dart';
 
@@ -11,85 +12,116 @@ class SettingsList extends StatefulWidget {
 }
 
 class _SettingsListState extends State<SettingsList> {
-  final dropdownItemList = ['iPhone Ringtone', 'item 2', 'item 3'];
+  final dropdownItemList = ['Marimba', 'item 2', 'item 3'];
   String? value;
   @override
   Widget build(BuildContext context) {
     List<SettingsItem> items = [
+      // Alarm Sound
+      SettingsItem(
+        'Alarm Sound',
+        Container(
+          height: 30.h,
+          width: 100.w,
+          decoration: BoxDecoration(
+            color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.2),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(6),
+            ),
+          ),
+          child: DropdownButtonHideUnderline(
+            child: Center(
+              child: DropdownButton<String>(
+                // Delete dropdown icon
+                icon: const Visibility(
+                  visible: false,
+                  child: Icon(Icons.arrow_downward),
+                ),
+                alignment: Alignment.center,
+                value: value ?? dropdownItemList[0],
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                    fontSize: 12.sp,
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                items: dropdownItemList.map(buildMenuItem).toList(),
+                onChanged: (value) => setState(() {
+                  this.value = value;
+                }),
+              ),
+            ),
+          ),
+        ),
+      ),
+
+      // Auto start breaks?
+      SettingsItem(
+        'Auto start Breaks?',
+        Checkbox(
+          value: false,
+          onChanged: (bool? value) {},
+        ),
+      ),
+
+      // Auto start Tasks?
+      SettingsItem(
+        'Auto start Tasks?',
+        Checkbox(
+          value: false,
+          onChanged: (bool? value) {},
+        ),
+      ),
+
       // Pomodoro Time
       SettingsItem(
-        Icons.alarm,
         'Pomodoro Time',
         Container(
-          width: 70.w,
-          height: 40.h,
+          height: 30.h,
+          width: 100.w,
           decoration: BoxDecoration(
-              color: Colors.grey.shade300,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(15),
+            color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.2),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(6),
+            ),
+          ),
+          child: Center(
+            child: Text(
+              '25:00',
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                  fontSize: 12.sp,
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
-              border: Border.all(
-                color: HexColor('#393939'),
-              )),
-          child: const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Center(child: Text('25:00')),
+            ),
           ),
         ),
       ),
 
       // Break Time
       SettingsItem(
-        Icons.timer,
         'Break Time',
         Container(
-          width: 70.w,
-          height: 40.h,
+          height: 30.h,
+          width: 100.w,
           decoration: BoxDecoration(
-              color: Colors.grey.shade300,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(15),
-              ),
-              border: Border.all(
-                color: HexColor('#393939'),
-              )),
-          child: const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Center(child: Text('05:00')),
-          ),
-        ),
-      ),
-
-      // Alarm Sound
-      SettingsItem(
-        Icons.volume_up,
-        'Alarm Sound',
-        Container(
-          height: 40.h,
-          width: 170.w,
-          decoration: BoxDecoration(
-            color: Colors.grey.shade300,
+            color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.2),
             borderRadius: const BorderRadius.all(
-              Radius.circular(15),
-            ),
-            border: Border.all(
-              color: HexColor('#393939'),
+              Radius.circular(6),
             ),
           ),
-          child: DropdownButtonHideUnderline(
-            child: Center(
-              child: DropdownButton<String>(
-                alignment: Alignment.center,
-                value: value ?? dropdownItemList[0],
-                style: TextStyle(
+          child: Center(
+            child: Text(
+              '25:00',
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
                   fontSize: 12.sp,
-                  color: HexColor('#393939'),
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  fontWeight: FontWeight.w500,
                 ),
-                iconSize: 30,
-                items: dropdownItemList.map(buildMenuItem).toList(),
-                onChanged: (value) => setState(() {
-                  this.value = value;
-                }),
               ),
             ),
           ),
@@ -106,8 +138,13 @@ class _SettingsListState extends State<SettingsList> {
         itemCount: items.length,
         itemBuilder: (context, index) {
           return ListTile(
-            leading: Icon(items[index].icon),
-            title: Text(items[index].title),
+            title: Text(
+              items[index].title,
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                    color: HexColor('#323232'), fontWeight: FontWeight.w500),
+              ),
+            ),
             trailing: items[index].trailing,
           );
         },

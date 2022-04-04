@@ -27,54 +27,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SliderDrawer(
-        appBar: SliderAppBar(
-          trailing: Consumer<ThemeProvider>(builder: (context, theme, child) {
-            return IconButton(
-              onPressed: () {
-                ThemeProvider().readData('themeMode').then((value) {
-                  if (value == 'light') {
-                    theme.setDarkMode();
-                    setState(() {
-                      themeM = 'dark';
-                    });
-                  } else {
-                    theme.setLightMode();
-                    setState(() {
-                      themeM = 'light';
-                    });
-                  }
-                });
-              },
-              icon: themeM == 'dark'
-                  ? Icon(
-                      Icons.wb_sunny,
-                      size: 25.w,
-                      color: Colors.white,
-                    )
-                  : Icon(
-                      Icons.dark_mode_outlined,
-                      size: 25.w,
-                      color: Colors.white,
-                    ),
-            );
-          }),
-          appBarPadding: EdgeInsets.only(top: 30.h),
-          appBarHeight: 60.w,
-          title: const Text(''),
-          drawerIconColor: Colors.white,
-          appBarColor: Theme.of(context).appBarTheme.backgroundColor!,
-        ),
+        appBar: settingsAppBar(context),
         slider: const DrawerMenu(),
         child: Column(
           children: [
             Expanded(
               flex: 2,
-              child: Container(
-                child: Column(
-                  children: [
-                    const ProfileComp(),
-                  ],
-                ),
+              child: Column(
+                children: const [
+                  ProfileComp(),
+                ],
               ),
             ),
             Expanded(
@@ -93,6 +55,46 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget settingsAppBar(BuildContext context) {
+    return SliderAppBar(
+      trailing: Consumer<ThemeProvider>(builder: (context, theme, child) {
+        return IconButton(
+          onPressed: () {
+            ThemeProvider().readData('themeMode').then((value) {
+              if (value == 'light') {
+                theme.setDarkMode();
+                setState(() {
+                  themeM = 'dark';
+                });
+              } else {
+                theme.setLightMode();
+                setState(() {
+                  themeM = 'light';
+                });
+              }
+            });
+          },
+          icon: themeM == 'dark'
+              ? Icon(
+                  Icons.wb_sunny,
+                  size: 25.w,
+                  color: Colors.white,
+                )
+              : Icon(
+                  Icons.dark_mode_outlined,
+                  size: 25.w,
+                  color: Colors.white,
+                ),
+        );
+      }),
+      appBarPadding: EdgeInsets.only(top: 30.h),
+      appBarHeight: 60.w,
+      title: const Text(''),
+      drawerIconColor: Colors.white,
+      appBarColor: Theme.of(context).appBarTheme.backgroundColor!,
     );
   }
 }
