@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_picker/Picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Widgets/Settings/settings_item.dart';
 
@@ -11,95 +13,203 @@ class SettingsList extends StatefulWidget {
 }
 
 class _SettingsListState extends State<SettingsList> {
-  final dropdownItemList = ['iPhone Ringtone', 'item 2', 'item 3'];
+  final dropdownItemList = ['Marimba', 'item 2', 'item 3'];
+  Duration _durationPomotime = Duration(minutes: 25);
+  Duration _durationBreaktime = Duration(minutes: 5);
+  bool checkboxbool = false;
   String? value;
   @override
   Widget build(BuildContext context) {
     List<SettingsItem> items = [
-      // Name change setting
+      // Alarm Sound
       SettingsItem(
-        Icons.person,
-        'Yilmaz Yagiz Dokumaci',
-        TextButton(
-          child: Text('Change'),
-          onPressed: () {},
+        'Alarm Sound',
+        Container(
+          height: 30.h,
+          width: 100.w,
+          decoration: BoxDecoration(
+            color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.2),
+            borderRadius: const BorderRadius.all(
+              Radius.circular(6),
+            ),
+          ),
+          child: DropdownButtonHideUnderline(
+            child: Center(
+              child: DropdownButton<String>(
+                // Delete dropdown icon
+                icon: const Visibility(
+                  visible: false,
+                  child: Icon(Icons.arrow_downward),
+                ),
+                alignment: Alignment.center,
+                value: value ?? dropdownItemList[0],
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                    fontSize: 12.sp,
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                items: dropdownItemList.map(buildMenuItem).toList(),
+                onChanged: (value) => setState(() {
+                  this.value = value;
+                }),
+              ),
+            ),
+          ),
+        ),
+      ),
+
+      // Auto start breaks?
+      SettingsItem(
+        'Auto start Breaks?',
+        Transform.scale(
+          scale: 1.35,
+          child: Checkbox(
+            checkColor: Colors.white,
+            fillColor: checkboxbool == false
+                ? MaterialStateProperty.all<Color>(Colors.grey)
+                : MaterialStateProperty.all<Color>(
+                    Theme.of(context).scaffoldBackgroundColor),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(5.0),
+              ),
+            ),
+            value: checkboxbool,
+            onChanged: (bool? value) {},
+          ),
+        ),
+      ),
+
+      // Auto start Tasks?
+      SettingsItem(
+        'Auto start Tasks?',
+        Transform.scale(
+          scale: 1.35,
+          child: Checkbox(
+            checkColor: Colors.white,
+            fillColor: checkboxbool == false
+                ? MaterialStateProperty.all<Color>(Colors.grey)
+                : MaterialStateProperty.all<Color>(
+                    Theme.of(context).scaffoldBackgroundColor),
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(5.0),
+              ),
+            ),
+            value: checkboxbool,
+            onChanged: (bool? value) {},
+          ),
         ),
       ),
 
       // Pomodoro Time
       SettingsItem(
-        Icons.alarm,
         'Pomodoro Time',
-        Container(
-          width: 70.w,
-          height: 40.h,
-          decoration: BoxDecoration(
-              color: Colors.grey.shade300,
+        GestureDetector(
+          onTap: () {
+            Picker(
+              height: 140,
+              itemExtent: 40,
+              adapter: NumberPickerAdapter(data: <NumberPickerColumn>[
+                NumberPickerColumn(
+                    initValue: _durationPomotime.inMinutes,
+                    jump: 5,
+                    begin: 15,
+                    end: 90,
+                    suffix: const Text(' Minutes')),
+              ]),
+              hideHeader: true,
+              confirmText: 'OK',
+              confirmTextStyle:
+                  TextStyle(inherit: false, color: Colors.red, fontSize: 18.sp),
+              title: const Text('Select Pomodoro Time'),
+              selectedTextStyle: TextStyle(color: Colors.blue),
+              onConfirm: (Picker picker, List<int> value) {
+                // You get your duration here
+                setState(() {
+                  _durationPomotime =
+                      Duration(minutes: picker.getSelectedValues()[0]);
+                });
+              },
+            ).showDialog(context);
+          },
+          child: Container(
+            height: 30.h,
+            width: 100.w,
+            decoration: BoxDecoration(
+              color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.2),
               borderRadius: const BorderRadius.all(
-                Radius.circular(15),
+                Radius.circular(6),
               ),
-              border: Border.all(
-                color: HexColor('#393939'),
-              )),
-          child: const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Center(child: Text('25:00')),
+            ),
+            child: Center(
+              child: Text(
+                '${_durationPomotime.inMinutes}:00',
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                    fontSize: 12.sp,
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
       ),
 
       // Break Time
       SettingsItem(
-        Icons.timer,
         'Break Time',
-        Container(
-          width: 70.w,
-          height: 40.h,
-          decoration: BoxDecoration(
-              color: Colors.grey.shade300,
+        GestureDetector(
+          onTap: () {
+            Picker(
+              height: 140,
+              itemExtent: 40,
+              adapter: NumberPickerAdapter(data: <NumberPickerColumn>[
+                NumberPickerColumn(
+                    initValue: _durationBreaktime.inMinutes,
+                    jump: 5,
+                    begin: 15,
+                    end: 90,
+                    suffix: const Text(' Minutes')),
+              ]),
+              hideHeader: true,
+              confirmText: 'OK',
+              confirmTextStyle:
+                  TextStyle(inherit: false, color: Colors.red, fontSize: 18.sp),
+              title: const Text('Select Break Time'),
+              selectedTextStyle: TextStyle(color: Colors.blue),
+              onConfirm: (Picker picker, List<int> value) {
+                // You get your duration here
+                setState(() {
+                  _durationBreaktime =
+                      Duration(minutes: picker.getSelectedValues()[0]);
+                });
+              },
+            ).showDialog(context);
+          },
+          child: Container(
+            height: 30.h,
+            width: 100.w,
+            decoration: BoxDecoration(
+              color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.2),
               borderRadius: const BorderRadius.all(
-                Radius.circular(15),
+                Radius.circular(6),
               ),
-              border: Border.all(
-                color: HexColor('#393939'),
-              )),
-          child: const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Center(child: Text('05:00')),
-          ),
-        ),
-      ),
-
-      // Alarm Sound
-      SettingsItem(
-        Icons.volume_up,
-        'Alarm Sound',
-        Container(
-          height: 40.h,
-          width: 170.w,
-          decoration: BoxDecoration(
-            color: Colors.grey.shade300,
-            borderRadius: const BorderRadius.all(
-              Radius.circular(15),
             ),
-            border: Border.all(
-              color: HexColor('#393939'),
-            ),
-          ),
-          child: DropdownButtonHideUnderline(
             child: Center(
-              child: DropdownButton<String>(
-                alignment: Alignment.center,
-                value: value ?? dropdownItemList[0],
-                style: TextStyle(
-                  fontSize: 12.sp,
-                  color: HexColor('#393939'),
+              child: Text(
+                '${_durationBreaktime.inMinutes.toString().padLeft(2, '0')}:00',
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                    fontSize: 12.sp,
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
-                iconSize: 30,
-                items: dropdownItemList.map(buildMenuItem).toList(),
-                onChanged: (value) => setState(() {
-                  this.value = value;
-                }),
               ),
             ),
           ),
@@ -116,8 +226,13 @@ class _SettingsListState extends State<SettingsList> {
         itemCount: items.length,
         itemBuilder: (context, index) {
           return ListTile(
-            leading: Icon(items[index].icon),
-            title: Text(items[index].title),
+            title: Text(
+              items[index].title,
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                    color: HexColor('#323232'), fontWeight: FontWeight.w500),
+              ),
+            ),
             trailing: items[index].trailing,
           );
         },

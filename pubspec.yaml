@@ -48,6 +48,7 @@ dependencies:
   easy_localization: ^3.0.0
   get: ^4.6.1
   roundcheckbox: ^2.0.4+1
+  flutter_picker: ^2.0.3
 
 
 dev_dependencies:
