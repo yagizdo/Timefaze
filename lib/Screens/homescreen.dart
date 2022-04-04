@@ -30,6 +30,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Floating action button
+      floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
+      floatingActionButton: FloatingActionButton(
+        elevation: 0,
+        onPressed: () {},
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        child: Icon(
+          Icons.add,
+          size: 35.sp,
+        ),
+      ),
       body: SliderDrawer(
         appBar: SliderAppBar(
           trailing: Consumer<ThemeProvider>(builder: (context, theme, child) {
