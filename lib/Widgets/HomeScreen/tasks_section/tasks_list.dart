@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:pomodoro_app/Extentions/t_key.dart';
 import 'package:pomodoro_app/Widgets/HomeScreen/tasks_section/task_card.dart';
+
+import '../../../Extentions/t_key.dart';
 
 class TasksList extends StatelessWidget {
   const TasksList({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class TasksList extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(top: 20.h, left: 15.w),
+          padding: EdgeInsets.only(top: 20.h, left: 20.w),
           child: Text(
             Tkeys.todolist.translate(context),
             style: GoogleFonts.poppins(
@@ -27,7 +28,7 @@ class TasksList extends StatelessWidget {
         ),
         Expanded(
           child: ListView(
-            padding: EdgeInsets.only(bottom: 30.h, top: 5.h),
+            padding: EdgeInsets.only(bottom: 30.h, top: 5.h, left: 10.w),
             children: [
               TaskCard(
                 title: 'Learn BloC',
