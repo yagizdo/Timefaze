@@ -24,7 +24,12 @@ class CodegenLoader extends AssetLoader{
     "breaktime": "Mola Süresi",
     "autostarttasks": "Görevleri otomatik başlat?",
     "alarmsound": "Alarm Sesi",
-    "pomotime": "Pomodoro Süresi"
+    "pomotime": "Pomodoro Süresi",
+    "ok_button": "Tamam",
+    "minutes_title": "Dakika",
+    "select_pomo_time": "Pomodoro Süresini Seçin",
+    "select_break_time": "Mola Süresini Seçin",
+    "cancel_button": "Vazgeç"
   },
   "homepage": {
     "pausebutton": "Durdur",
@@ -44,7 +49,12 @@ static const Map<String,dynamic> en = {
     "breaktime": "Break Time",
     "autostarttasks": "Auto start Tasks?",
     "alarmsound": "Alarm Sound",
-    "pomotime": "Pomodoro Time"
+    "pomotime": "Pomodoro Time",
+    "ok_button": "Ok",
+    "minutes_title": "Minutes",
+    "select_pomo_time": "Select Pomodoro Time",
+    "select_break_time": "Select Break Time",
+    "cancel_button": "Cancel"
   },
   "homepage": {
     "pausebutton": "Pause",

@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_picker/Picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:pomodoro_app/Extentions/locale_keys.g.dart';
 import 'package:pomodoro_app/Widgets/Settings/settings_item.dart';
 
 class SettingsList extends StatefulWidget {
@@ -23,7 +25,7 @@ class _SettingsListState extends State<SettingsList> {
     List<SettingsItem> items = [
       // Alarm Sound
       SettingsItem(
-        'Tkeys.alarmsound.translate(context)',
+        LocaleKeys.settings_alarmsound.tr(),
         Container(
           height: 30.h,
           width: 100.w,
@@ -62,7 +64,7 @@ class _SettingsListState extends State<SettingsList> {
 
       // Auto start breaks?
       SettingsItem(
-        'Tkeys.autostartbreaks.translate(context)',
+        LocaleKeys.settings_autostartbreaks.tr(),
         Transform.scale(
           scale: 1.35,
           child: Checkbox(
@@ -84,7 +86,7 @@ class _SettingsListState extends State<SettingsList> {
 
       // Auto start Tasks?
       SettingsItem(
-        'Tkeys.autostarttasks.translate(context)',
+        LocaleKeys.settings_autostarttasks.tr(),
         Transform.scale(
           scale: 1.35,
           child: Checkbox(
@@ -106,7 +108,7 @@ class _SettingsListState extends State<SettingsList> {
 
       // Pomodoro Time
       SettingsItem(
-        'Tkeys.pomotime.translate(context)',
+        LocaleKeys.settings_pomotime.tr(),
         GestureDetector(
           onTap: () {
             Picker(
@@ -118,13 +120,16 @@ class _SettingsListState extends State<SettingsList> {
                     jump: 5,
                     begin: 15,
                     end: 90,
-                    suffix: const Text(' Minutes')),
+                    suffix: Text(' ${LocaleKeys.settings_minutes_title.tr()}')),
               ]),
               hideHeader: true,
-              confirmText: 'OK',
-              confirmTextStyle:
+              confirmText: LocaleKeys.settings_ok_button.tr(),
+              cancelText: LocaleKeys.settings_cancel_button.tr(),
+              cancelTextStyle:
                   TextStyle(inherit: false, color: Colors.red, fontSize: 18.sp),
-              title: const Text('Select Pomodoro Time'),
+              confirmTextStyle: TextStyle(
+                  inherit: false, color: Colors.blue, fontSize: 18.sp),
+              title: Text(LocaleKeys.settings_select_pomo_time.tr()),
               selectedTextStyle: TextStyle(color: Colors.blue),
               onConfirm: (Picker picker, List<int> value) {
                 // You get your duration here
@@ -162,7 +167,7 @@ class _SettingsListState extends State<SettingsList> {
 
       // Break Time
       SettingsItem(
-        'Tkeys.breaktime.translate(context)',
+        LocaleKeys.settings_breaktime.tr(),
         GestureDetector(
           onTap: () {
             Picker(
@@ -172,15 +177,20 @@ class _SettingsListState extends State<SettingsList> {
                 NumberPickerColumn(
                     initValue: _durationBreaktime.inMinutes,
                     jump: 5,
-                    begin: 15,
+                    begin: 5,
                     end: 90,
-                    suffix: const Text(' Minutes')),
+                    suffix: Text(' ${LocaleKeys.settings_minutes_title.tr()}')),
               ]),
               hideHeader: true,
-              confirmText: 'OK',
-              confirmTextStyle:
+              confirmText: LocaleKeys.settings_ok_button.tr(),
+              // Bu altta ki confirm e istersen widget koyabilirsin direk elevated button vs
+              //confirm: ,
+              cancelText: LocaleKeys.settings_cancel_button.tr(),
+              cancelTextStyle:
                   TextStyle(inherit: false, color: Colors.red, fontSize: 18.sp),
-              title: const Text('Select Break Time'),
+              confirmTextStyle: TextStyle(
+                  inherit: false, color: Colors.blue, fontSize: 18.sp),
+              title: Text(LocaleKeys.settings_select_break_time.tr()),
               selectedTextStyle: TextStyle(color: Colors.blue),
               onConfirm: (Picker picker, List<int> value) {
                 // You get your duration here

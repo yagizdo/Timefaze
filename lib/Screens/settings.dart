@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
@@ -6,6 +7,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Widgets/Settings/settings_list.dart';
 import 'package:provider/provider.dart';
 
+import '../Extentions/locale_keys.g.dart';
 import '../Providers/theme_provider.dart';
 import '../Widgets/HomeScreen/drawer_menu.dart';
 import '../Widgets/Settings/profile_comp.dart';
@@ -58,7 +60,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       padding: EdgeInsets.only(
                           top: 16.sp, left: 15.sp, right: 15.sp),
                       child: Text(
-                        ' Tkeys.settings.translate(context)',
+                        LocaleKeys.drawer_menu_settings_title.tr(),
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 18.sp,
