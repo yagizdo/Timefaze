@@ -3,8 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-import '../../Extentions/t_key.dart';
-
 class WelcomeBackComp extends StatelessWidget {
   const WelcomeBackComp({Key? key}) : super(key: key);
 
@@ -18,7 +16,7 @@ class WelcomeBackComp extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 17.w, top: 20.h),
               child: Text(
-                '${Tkeys.welcomeback.translate(context)},Yilmaz',
+                '${'Tkeys.welcomeback.translate(context)'},Yilmaz',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                       fontSize: 19.sp,
@@ -32,7 +30,7 @@ class WelcomeBackComp extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 child: Text(
-                  Tkeys.startbutton.translate(context),
+                  'Tkeys.startbutton.translate(context)',
                   style: GoogleFonts.poppins(
                       textStyle: TextStyle(color: HexColor('#5F5FFF'))),
                 ),

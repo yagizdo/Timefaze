@@ -4,8 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-import '../../Extentions/t_key.dart';
-
 class PomodoroComp extends StatelessWidget {
   PomodoroComp({Key? key, required this.lang}) : super(key: key);
   String lang;
@@ -54,7 +52,7 @@ class PomodoroComp extends StatelessWidget {
                           width: 12,
                         ),
                         Text(
-                          Tkeys.pausebutton.translate(context),
+                          'Tkeys.pausebutton.translate(context)',
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
                                 color: HexColor('#5F5FFF'),
@@ -92,7 +90,7 @@ class PomodoroComp extends StatelessWidget {
                           width: 12,
                         ),
                         Text(
-                          Tkeys.stopbutton.translate(context),
+                          'Tkeys.stopbutton.translate(context)',
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
                                 color: HexColor('#5F5FFF'),

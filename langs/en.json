@@ -1,16 +1,20 @@
 {
-  "welcomeback": "Welcome Back ",
-  "startbutton": "Start Pomodoro ",
-  "homepage": "HomePage",
-  "settings": "Settings",
-  "stopbutton": "Reset",
-  "pausebutton": "Pause",
-  "todolist": "To-do List",
-
-
-  "alarmsound": "Alarm Sound",
-  "autostartbreaks": "Auto start Breaks?",
-  "autostarttasks": "Auto start Tasks?",
-  "pomotime": "Pomodoro Time",
-  "breaktime": "Break Time"
+  "drawer_menu": {
+    "settings_title": "Settings",
+    "homepage_title": "HomePage"
+  },
+  "settings": {
+    "autostartbreaks": "Auto start Breaks?",
+    "breaktime": "Break Time",
+    "autostarttasks": "Auto start Tasks?",
+    "alarmsound": "Alarm Sound",
+    "pomotime": "Pomodoro Time"
+  },
+  "homepage": {
+    "pausebutton": "Pause",
+    "startbutton": "Start Pomodoro ",
+    "stopbutton": "Reset",
+    "todolist": "To-do List",
+    "welcomeback": "Welcome Back "
+  }
 }

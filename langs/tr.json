@@ -1,15 +1,20 @@
 {
-  "welcomeback": "Tekrardan Hoşgeldin ",
-  "startbutton": "Pomodoro Başlat ",
-  "homepage": "AnaSayfa",
-  "settings": "Ayarlar",
-  "stopbutton": "Resetle",
-  "pausebutton": "Durdur",
-  "todolist": "Yapılacaklar Listesi",
-
-  "alarmsound": "Alarm Sesi",
-  "autostartbreaks": "Molayı otomatik başlat?",
-  "autostarttasks": "Görevleri otomatik başlat?",
-  "pomotime": "Pomodoro Süresi",
-  "breaktime": "Mola Süresi"
+  "drawer_menu": {
+    "settings_title": "Ayarlar",
+    "homepage_title": "AnaSayfa"
+  },
+  "settings": {
+    "autostartbreaks": "Molayı otomatik başlat?",
+    "breaktime": "Mola Süresi",
+    "autostarttasks": "Görevleri otomatik başlat?",
+    "alarmsound": "Alarm Sesi",
+    "pomotime": "Pomodoro Süresi"
+  },
+  "homepage": {
+    "pausebutton": "Durdur",
+    "startbutton": "Pomodoro Başlat ",
+    "stopbutton": "Resetle",
+    "todolist": "Yapılacaklar Listesi",
+    "welcomeback": "Tekrardan Hoşgeldin "
+  }
 }
