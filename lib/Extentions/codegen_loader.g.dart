@@ -30,8 +30,8 @@ class CodegenLoader extends AssetLoader{
     "pausebutton": "Durdur",
     "startbutton": "Pomodoro Başlat ",
     "stopbutton": "Resetle",
-    "todolist": "Yapılacaklar Listesi",
-    "welcomeback": "Tekrardan Hoşgeldin "
+    "welcomeback": "Tekrardan Hoşgeldin ",
+    "todolist_title": "Yapılacaklar Listesi"
   }
 };
 static const Map<String,dynamic> en = {
@@ -50,8 +50,8 @@ static const Map<String,dynamic> en = {
     "pausebutton": "Pause",
     "startbutton": "Start Pomodoro ",
     "stopbutton": "Reset",
-    "todolist": "To-do List",
-    "welcomeback": "Welcome Back "
+    "welcomeback": "Welcome Back ",
+    "todolist_title": "To-do List"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"tr": tr, "en": en};

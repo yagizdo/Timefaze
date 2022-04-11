@@ -14,7 +14,7 @@
     "pausebutton": "Pause",
     "startbutton": "Start Pomodoro ",
     "stopbutton": "Reset",
-    "todolist": "To-do List",
-    "welcomeback": "Welcome Back "
+    "welcomeback": "Welcome Back ",
+    "todolist_title": "To-do List"
   }
 }

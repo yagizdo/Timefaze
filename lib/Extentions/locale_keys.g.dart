@@ -13,8 +13,8 @@ abstract class  LocaleKeys {
   static const homepage_pausebutton = 'homepage.pausebutton';
   static const homepage_startbutton = 'homepage.startbutton';
   static const homepage_stopbutton = 'homepage.stopbutton';
-  static const homepage_todolist = 'homepage.todolist';
   static const homepage_welcomeback = 'homepage.welcomeback';
+  static const homepage_todolist_title = 'homepage.todolist_title';
   static const homepage = 'homepage';
 
 }

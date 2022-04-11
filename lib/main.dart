@@ -21,8 +21,17 @@ void main() async {
   runApp(
     ChangeNotifierProvider(
       create: (_) => ThemeProvider(),
-      builder: (context, snapshot) => PomodoroApp(
-        themeMode: _themeMode,
+      builder: (context, snapshot) => EasyLocalization(
+        path: 'lib/langs',
+        supportedLocales: const [
+          Locale('en'),
+          Locale('tr'),
+        ],
+        assetLoader: CodegenLoader(),
+        fallbackLocale: Locale('en'),
+        child: PomodoroApp(
+          themeMode: _themeMode,
+        ),
       ),
     ),
   );
@@ -38,27 +47,21 @@ class PomodoroApp extends StatelessWidget {
     return Consumer<ThemeProvider>(builder: (context, theme, child) {
       return ScreenUtilInit(
         designSize: const Size(375, 812),
-        builder: () => EasyLocalization(
-          path: 'langs',
-          supportedLocales: const [
-            Locale('en'),
-            Locale('tr'),
-          ],
-          assetLoader: CodegenLoader(),
-          fallbackLocale: Locale('en'),
-          child: MaterialApp(
-            builder: (context, widget) {
-              ScreenUtil.setContext(context);
-              return MediaQuery(
-                data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-                child: widget!,
-              );
-            },
-            title: 'Timefaze',
-            debugShowCheckedModeBanner: false,
-            theme: theme.getTheme(),
-            home: const HomeScreen(),
-          ),
+        builder: () => MaterialApp(
+          builder: (context, widget) {
+            ScreenUtil.setContext(context);
+            return MediaQuery(
+              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+              child: widget!,
+            );
+          },
+          title: 'Timefaze',
+          locale: context.locale,
+          supportedLocales: context.supportedLocales,
+          localizationsDelegates: context.localizationDelegates,
+          debugShowCheckedModeBanner: false,
+          theme: theme.getTheme(),
+          home: const HomeScreen(),
         ),
       );
     });
