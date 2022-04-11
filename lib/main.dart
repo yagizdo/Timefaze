@@ -10,8 +10,10 @@ import 'Screens/homescreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // Init Easy Localization
   EasyLocalization.ensureInitialized();
   var _themeMode = await ThemeProvider().readData('themeMode');
+  // Portrait Mode Lock
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -38,7 +40,7 @@ class PomodoroApp extends StatelessWidget {
         designSize: const Size(375, 812),
         builder: () => EasyLocalization(
           path: 'langs',
-          supportedLocales: [
+          supportedLocales: const [
             Locale('en'),
             Locale('tr'),
           ],
