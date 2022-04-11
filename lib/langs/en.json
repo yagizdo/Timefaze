@@ -1,0 +1,25 @@
+{
+  "drawer_menu": {
+    "settings_title": "Settings",
+    "homepage_title": "HomePage"
+  },
+  "settings": {
+    "autostartbreaks": "Auto start Breaks?",
+    "breaktime": "Break Time",
+    "autostarttasks": "Auto start Tasks?",
+    "alarmsound": "Alarm Sound",
+    "pomotime": "Pomodoro Time",
+    "ok_button": "Ok",
+    "minutes_title": "Minutes",
+    "select_pomo_time": "Select Pomodoro Time",
+    "select_break_time": "Select Break Time",
+    "cancel_button": "Cancel"
+  },
+  "homepage": {
+    "pausebutton": "Pause",
+    "startbutton": "Start Pomodoro ",
+    "stopbutton": "Reset",
+    "welcomeback": "Welcome Back {}",
+    "todolist_title": "To-do List"
+  }
+}

@@ -1,9 +1,9 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-
-import '../../Extentions/t_key.dart';
+import 'package:pomodoro_app/Extentions/locale_keys.g.dart';
 
 class WelcomeBackComp extends StatelessWidget {
   const WelcomeBackComp({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class WelcomeBackComp extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(left: 17.w, top: 20.h),
               child: Text(
-                '${Tkeys.welcomeback.translate(context)},Yilmaz',
+                LocaleKeys.homepage_welcomeback.tr(args: ['Yilmaz']),
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                       fontSize: 19.sp,
@@ -32,7 +32,7 @@ class WelcomeBackComp extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 child: Text(
-                  Tkeys.startbutton.translate(context),
+                  LocaleKeys.homepage_startbutton.tr(),
                   style: GoogleFonts.poppins(
                       textStyle: TextStyle(color: HexColor('#5F5FFF'))),
                 ),
@@ -46,33 +46,6 @@ class WelcomeBackComp extends StatelessWidget {
                 ),
               ),
             ),
-            /*
-                        // Toggle Lang button
-                        Padding(
-                          padding: EdgeInsets.only(left: 17.w),
-                          child: Consumer<ThemeProvider>(
-                              builder: (context, theme, child) {
-                            return ElevatedButton(
-                              onPressed: () {
-                                localizationController.toggleLanguage();
-                              },
-                              child: Text(
-                                Tkeys.selectlang.translate(context),
-                                style: TextStyle(color: HexColor('#5F5FFF')),
-                              ),
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
-                                shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                  ),
-                                ),
-                              ),
-                            );
-                          }),
-                        ),*/
           ],
         ));
   }

@@ -1,0 +1,25 @@
+{
+  "drawer_menu": {
+    "settings_title": "Ayarlar",
+    "homepage_title": "AnaSayfa"
+  },
+  "settings": {
+    "autostartbreaks": "Molayı otomatik başlat?",
+    "breaktime": "Mola Süresi",
+    "autostarttasks": "Görevleri otomatik başlat?",
+    "alarmsound": "Alarm Sesi",
+    "pomotime": "Pomodoro Süresi",
+    "ok_button": "Tamam",
+    "minutes_title": "Dakika",
+    "select_pomo_time": "Pomodoro Süresini Seçin",
+    "select_break_time": "Mola Süresini Seçin",
+    "cancel_button": "Vazgeç"
+  },
+  "homepage": {
+    "pausebutton": "Durdur",
+    "startbutton": "Pomodoro Başlat ",
+    "stopbutton": "Resetle",
+    "welcomeback": "Tekrardan Hoşgeldin {}",
+    "todolist_title": "Yapılacaklar Listesi"
+  }
+}

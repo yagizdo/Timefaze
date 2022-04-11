@@ -1,10 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:pomodoro_app/Extentions/locale_keys.g.dart';
 import 'package:pomodoro_app/Widgets/HomeScreen/tasks_section/task_card.dart';
-
-import '../../../Extentions/t_key.dart';
 
 class TasksList extends StatelessWidget {
   const TasksList({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class TasksList extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(top: 20.h, left: 20.w),
           child: Text(
-            Tkeys.todolist.translate(context),
+            LocaleKeys.homepage_todolist_title.tr(),
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
                   color: HexColor('#393939'),
