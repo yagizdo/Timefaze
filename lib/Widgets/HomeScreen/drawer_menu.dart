@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pomodoro_app/Extentions/locale_keys.g.dart';
 
 import '../../Screens/homescreen.dart';
 import '../../Screens/settings.dart';
@@ -19,10 +21,11 @@ class _DrawerMenuState extends State<DrawerMenu> {
     List<MenuItem> menuItems = [
       MenuItem(
         Icons.check_box,
-        'Tkeys.homepage.translate(context)',
+        LocaleKeys.drawer_menu_homepage_title.tr(),
         false,
       ),
-      MenuItem(Icons.settings, 'Tkeys.settings.translate(context)', false)
+      MenuItem(
+          Icons.settings, LocaleKeys.drawer_menu_settings_title.tr(), false)
     ];
     return Container(
       color: Theme.of(context).scaffoldBackgroundColor,
@@ -75,7 +78,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                     return GestureDetector(
                       onTap: () {
                         menuItems[index].title ==
-                                'Tkeys.homepage.translate(context)'
+                                LocaleKeys.drawer_menu_homepage_title.tr()
                             ? Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
@@ -83,7 +86,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
                                 ),
                               )
                             : menuItems[index].title ==
-                                    'Tkeys.settings.translate(context)'
+                                    LocaleKeys.drawer_menu_settings_title.tr()
                                 ? Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
