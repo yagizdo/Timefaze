@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:pomodoro_app/Extentions/locale_keys.g.dart';
 
 class PomodoroComp extends StatelessWidget {
   PomodoroComp({Key? key, required this.lang}) : super(key: key);
@@ -52,7 +54,7 @@ class PomodoroComp extends StatelessWidget {
                           width: 12,
                         ),
                         Text(
-                          'Tkeys.pausebutton.translate(context)',
+                          LocaleKeys.homepage_pausebutton.tr(),
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
                                 color: HexColor('#5F5FFF'),
@@ -90,7 +92,7 @@ class PomodoroComp extends StatelessWidget {
                           width: 12,
                         ),
                         Text(
-                          'Tkeys.stopbutton.translate(context)',
+                          LocaleKeys.homepage_stopbutton.tr(),
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
                                 color: HexColor('#5F5FFF'),

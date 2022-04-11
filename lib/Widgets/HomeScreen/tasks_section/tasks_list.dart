@@ -17,7 +17,7 @@ class TasksList extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(top: 20.h, left: 20.w),
           child: Text(
-            LocaleKeys.homepage_pausebutton.tr(),
+            LocaleKeys.homepage_todolist_title.tr(),
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
                   color: HexColor('#393939'),

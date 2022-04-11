@@ -14,7 +14,7 @@
     "pausebutton": "Durdur",
     "startbutton": "Pomodoro Başlat ",
     "stopbutton": "Resetle",
-    "welcomeback": "Tekrardan Hoşgeldin ",
+    "welcomeback": "Tekrardan Hoşgeldin {}",
     "todolist_title": "Yapılacaklar Listesi"
   }
 }
