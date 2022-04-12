@@ -48,6 +48,8 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        // TODO: Eger androidte bir seyler bozulursa bu son ekledigini silebilirsin
+        multiDexEnabled true
     }
 
     buildTypes {
