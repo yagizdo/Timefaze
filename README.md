@@ -57,8 +57,10 @@ Run App
 - Hex Color : https://pub.dev/packages/hexcolor
 - Flutter Screen Util : https://pub.dev/packages/flutter_screenutil
 - Google Fonts : https://pub.dev/packages/google_fonts
-- GetX(For Localization) : https://pub.dev/packages/get
+- Easy Localization : https://pub.dev/packages/easy_localization
 - Flutter Svg : https://pub.dev/packages/flutter_svg
+- Flutter Picker : https://pub.dev/packages/flutter_picker
+- Flutter Slider Drawer : https://pub.dev/packages/flutter_slider_drawer
 
 
 ## App Video

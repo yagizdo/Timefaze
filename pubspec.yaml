@@ -46,7 +46,6 @@ dependencies:
   google_fonts: ^2.3.1
   flutter_slider_drawer: ^2.1.1
   easy_localization: ^3.0.0
-  roundcheckbox: ^2.0.4+1
   flutter_picker: ^2.0.3
 
 
