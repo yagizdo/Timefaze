@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pomodoro_app/Providers/theme_provider.dart';
+import 'package:pomodoro_app/Widgets/Onboarding/pager.dart';
 import 'package:provider/provider.dart';
 
 import 'Extentions/codegen_loader.g.dart';
-import 'Screens/homescreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -61,7 +61,7 @@ class PomodoroApp extends StatelessWidget {
           localizationsDelegates: context.localizationDelegates,
           debugShowCheckedModeBanner: false,
           theme: theme.getTheme(),
-          home: const HomeScreen(),
+          home: OnboardingPagerTypeOne(),
         ),
       );
     });

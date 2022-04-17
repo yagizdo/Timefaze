@@ -14,7 +14,7 @@ class OnboardPageTypeOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Container(
-        color: white,
+        color: Theme.of(context).scaffoldBackgroundColor,
         child: Column(
           children: <Widget>[
             Expanded(

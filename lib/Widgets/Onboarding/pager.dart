@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../Assets/Colors/colors.dart';
 import '../../Models/onboard_data.dart';
+import '../../Screens/homescreen.dart';
 import '../../Screens/onboarding.dart';
 import 'button_round_with_shadow.dart';
 
@@ -25,24 +26,24 @@ class _OnboardingPagerTypeOneState extends State<OnboardingPagerTypeOne> {
       introWidgetsList.add(OnboardPageTypeOne(
         data: OnboardData(
             placeHolder: kIsWeb
-                ? "images/onboarding_image_one.svg"
-                : "assets/images/onboarding_image_one.svg",
+                ? "lib/Assets/img/onboarding_image_one.svg"
+                : "lib/Assets/img/onboarding_image_one.svg",
             title: 'Title',
             description: 'desc'),
       ));
       introWidgetsList.add(OnboardPageTypeOne(
         data: OnboardData(
             placeHolder: kIsWeb
-                ? "images/onboarding_image_two.svg"
-                : "assets/images/onboarding_image_two.svg",
+                ? "lib/Assets/img/onboarding_image_two.svg"
+                : "lib/Assets/img/onboarding_image_two.svg",
             title: 'title 2',
             description: 'desc 2'),
       ));
       introWidgetsList.add(OnboardPageTypeOne(
         data: OnboardData(
             placeHolder: kIsWeb
-                ? "images/onboarding_image_three.svg"
-                : "assets/images/onboarding_image_three.svg",
+                ? "lib/Assets/img/onboarding_image_three.svg"
+                : "lib/Assets/img/onboarding_image_three.svg",
             title: 'title 3',
             description: 'desc 3'),
       ));
@@ -153,10 +154,15 @@ class _OnboardingPagerTypeOneState extends State<OnboardingPagerTypeOne> {
                     borderColor: wood_smoke,
                     color: white,
                     callback: () {
-                      Navigator.pop(context);
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomeScreen(),
+                        ),
+                      );
                     },
                     shadowColor: wood_smoke,
-                    iconPath: "assets/icons/close.svg"),
+                    iconPath: "lib/Assets/icons/close.svg"),
               )
             : SizedBox(),
       ],
