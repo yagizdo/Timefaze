@@ -24,7 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     defaultLocale = Platform.localeName;
-    ThemeProvider().readData('themeMode').then((value) => themeM = value);
+    //Provider.of<ThemeProvider>(context,listen: false).initSharedPreferences();
+    //ThemeProvider().readData().then((value) => themeM = value);
   }
 
   @override
@@ -34,7 +35,10 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       floatingActionButton: FloatingActionButton(
         elevation: 0,
-        onPressed: () {},
+        onPressed: () {
+          Provider.of<ThemeProvider>(context,listen: false).toggleTheme();
+
+        },
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         child: Icon(
           Icons.add,
@@ -46,19 +50,6 @@ class _HomeScreenState extends State<HomeScreen> {
           trailing: Consumer<ThemeProvider>(builder: (context, theme, child) {
             return IconButton(
               onPressed: () {
-                ThemeProvider().readData('themeMode').then((value) {
-                  if (value == 'light') {
-                    theme.setDarkMode();
-                    setState(() {
-                      themeM = 'dark';
-                    });
-                  } else {
-                    theme.setLightMode();
-                    setState(() {
-                      themeM = 'light';
-                    });
-                  }
-                });
               },
               icon: themeM == 'dark'
                   ? Icon(

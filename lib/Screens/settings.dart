@@ -24,7 +24,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   void initState() {
     super.initState();
-    ThemeProvider().readData('themeMode').then((value) => themeM = value);
+    //ThemeProvider().readData().then((value) => themeM = value);
+    //Provider.of<ThemeProvider>(context,listen: false).dataCek();
   }
 
   @override
@@ -91,31 +92,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
       trailing: Consumer<ThemeProvider>(builder: (context, theme, child) {
         return IconButton(
           onPressed: () {
-            ThemeProvider().readData('themeMode').then((value) {
-              if (value == 'light') {
-                theme.setDarkMode();
-                setState(() {
-                  themeM = 'dark';
-                });
-              } else {
-                theme.setLightMode();
-                setState(() {
-                  themeM = 'light';
-                });
-              }
-            });
+           //Provider.of<ThemeProvider>(context,listen: false).toggleTheme();
+            print('tiklandi');
           },
-          icon: themeM == 'dark'
-              ? Icon(
+          icon: Icon(
                   Icons.wb_sunny,
                   size: 25.w,
                   color: Colors.white,
                 )
-              : Icon(
-                  Icons.dark_mode_outlined,
-                  size: 25.w,
-                  color: Colors.white,
-                ),
         );
       }),
       appBarPadding: EdgeInsets.only(top: 30.h),

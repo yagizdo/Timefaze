@@ -12,7 +12,10 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Init Easy Localization
   EasyLocalization.ensureInitialized();
-  var _themeMode = await ThemeProvider().readData('themeMode');
+  ThemeProvider().initSharedPreferences();
+  bool value2 = ThemeProvider().getBool();
+  print('gelen data artik gelsin : $value2');
+  //var _themeMode = await ThemeProvider().readData();
   // Portrait Mode Lock
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
@@ -30,7 +33,6 @@ void main() async {
         assetLoader: CodegenLoader(),
         fallbackLocale: Locale('en'),
         child: PomodoroApp(
-          themeMode: _themeMode,
         ),
       ),
     ),
@@ -38,13 +40,12 @@ void main() async {
 }
 
 class PomodoroApp extends StatelessWidget {
-  PomodoroApp({Key? key, required this.themeMode}) : super(key: key);
-
-  var themeMode;
+  PomodoroApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Consumer<ThemeProvider>(builder: (context, theme, child) {
+      print('gelen data main : ${theme.getBool()}');
       return ScreenUtilInit(
         designSize: const Size(375, 812),
         builder: () => MaterialApp(
@@ -60,7 +61,7 @@ class PomodoroApp extends StatelessWidget {
           supportedLocales: context.supportedLocales,
           localizationsDelegates: context.localizationDelegates,
           debugShowCheckedModeBanner: false,
-          theme: theme.getTheme(),
+          theme: theme.getBool() ? theme.darkTheme : theme.lightTheme,
           home: const HomeScreen(),
         ),
       );
