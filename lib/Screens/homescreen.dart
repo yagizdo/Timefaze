@@ -19,13 +19,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late final String defaultLocale;
-  var themeM = 'light';
-  @override
   void initState() {
     super.initState();
     defaultLocale = Platform.localeName;
-    //Provider.of<ThemeProvider>(context,listen: false).initSharedPreferences();
-    //ThemeProvider().readData().then((value) => themeM = value);
   }
 
   @override
@@ -36,8 +32,6 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: FloatingActionButton(
         elevation: 0,
         onPressed: () {
-          Provider.of<ThemeProvider>(context,listen: false).toggleTheme();
-
         },
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         child: Icon(
@@ -47,23 +41,15 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SliderDrawer(
         appBar: SliderAppBar(
-          trailing: Consumer<ThemeProvider>(builder: (context, theme, child) {
-            return IconButton(
+          trailing: IconButton(
               onPressed: () {
               },
-              icon: themeM == 'dark'
-                  ? Icon(
-                      Icons.wb_sunny,
-                      size: 25.w,
-                      color: Colors.white,
-                    )
-                  : Icon(
+              icon: Icon(
                       Icons.dark_mode_outlined,
                       size: 25.w,
                       color: Colors.white,
                     ),
-            );
-          }),
+            ),
           appBarPadding: EdgeInsets.only(
             top: 30.h, /*left: 15.w*/
           ),
