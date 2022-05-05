@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:pomodoro_app/Widgets/HomeScreen/drawer_menu.dart';
-import 'package:provider/provider.dart';
 
-import '../Providers/theme_provider.dart';
 import '../Widgets/HomeScreen/pomodoro_timer_comp.dart';
 import '../Widgets/HomeScreen/tasks_section/tasks_list.dart';
 

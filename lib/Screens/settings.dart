@@ -5,10 +5,8 @@ import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Widgets/Settings/settings_list.dart';
-import 'package:provider/provider.dart';
 
 import '../Extentions/locale_keys.g.dart';
-import '../Providers/theme_provider.dart';
 import '../Widgets/HomeScreen/drawer_menu.dart';
 import '../Widgets/Settings/profile_comp.dart';
 
