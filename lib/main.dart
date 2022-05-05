@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/constants/app_colors.dart';
+import 'package:pomodoro_app/main_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'Extentions/codegen_loader.g.dart';
@@ -61,7 +62,7 @@ class PomodoroApp extends StatelessWidget {
           brightness: Brightness.light,
           scaffoldBackgroundColor: purpleblue,
         ),
-        home: const HomeScreen(),
+        home: const MainScreen(),
       ),
     );
   }
