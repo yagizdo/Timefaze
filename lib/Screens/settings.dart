@@ -7,7 +7,6 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Widgets/Settings/settings_list.dart';
 
 import '../Extentions/locale_keys.g.dart';
-import '../Widgets/HomeScreen/drawer_menu.dart';
 import '../Widgets/Settings/profile_comp.dart';
 
 class SettingsScreen extends StatefulWidget {

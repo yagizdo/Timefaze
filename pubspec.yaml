@@ -38,13 +38,11 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  provider: ^6.0.2
   shared_preferences: ^2.0.13
   hexcolor: ^2.0.6
   flutter_screenutil: ^5.3.1
   flutter_svg: ^1.0.3
   google_fonts: ^2.3.1
-  flutter_slider_drawer: ^2.1.1
   easy_localization: ^3.0.0
   flutter_picker: ^2.0.3
   backdrop: ^0.7.2
