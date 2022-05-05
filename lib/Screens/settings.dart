@@ -26,10 +26,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SliderDrawer(
-        appBar: settingsAppBar(context),
-        slider: const DrawerMenu(),
-        child: Column(
+      body: Column(
           children: [
             Expanded(
               flex: 2,
@@ -78,7 +75,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
           ],
         ),
-      ),
     );
   }
 

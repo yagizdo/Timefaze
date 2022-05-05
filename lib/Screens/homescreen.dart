@@ -37,19 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
           size: 35.sp,
         ),
       ),
-      body: SliderDrawer(
-        appBar: SliderAppBar(
-          appBarPadding: EdgeInsets.only(
-            top: 30.h, /*left: 15.w*/
-          ),
-          appBarHeight: 60.w,
-          //drawerIcon: SvgPicture.asset('lib/Assets/icons/feather_menu.svg'),
-          title: const Text(''),
-          drawerIconColor: Colors.white,
-          appBarColor: Theme.of(context).appBarTheme.backgroundColor!,
-        ),
-        slider: const DrawerMenu(),
-        child: Column(
+      body: Column(
           children: [
             Expanded(
               flex: 2,
@@ -72,7 +60,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ],
         ),
-      ),
     );
   }
 }
