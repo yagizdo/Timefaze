@@ -84,17 +84,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Widget settingsAppBar(BuildContext context) {
     return SliderAppBar(
-      trailing: IconButton(
-          onPressed: () {
-           //Provider.of<ThemeProvider>(context,listen: false).toggleTheme();
-            print('tiklandi');
-          },
-          icon: Icon(
-                  Icons.wb_sunny,
-                  size: 25.w,
-                  color: Colors.white,
-                )
-        ),
       appBarPadding: EdgeInsets.only(top: 30.h),
       appBarHeight: 60.w,
       title: const Text(''),

@@ -39,15 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SliderDrawer(
         appBar: SliderAppBar(
-          trailing: IconButton(
-              onPressed: () {
-              },
-              icon: Icon(
-                      Icons.dark_mode_outlined,
-                      size: 25.w,
-                      color: Colors.white,
-                    ),
-            ),
           appBarPadding: EdgeInsets.only(
             top: 30.h, /*left: 15.w*/
           ),
