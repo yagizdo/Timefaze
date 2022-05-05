@@ -7,5 +7,6 @@ class AppAssets {
  final edit_icon = 'lib/Assets/icons/editicon.svg';
  final menu_icon = 'lib/Assets/icons/feather_menu.svg';
  final pause_icon = 'lib/Assets/icons/pauseicon.svg';
+ final start_icon = 'lib/Assets/icons/start_icon.svg';
  final stop_icon = 'lib/Assets/icons/stopicon.svg';
 }
