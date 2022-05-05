@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Extentions/locale_keys.g.dart';
+import 'package:pomodoro_app/constants/app_assets.dart';
 
 class PomodoroComp extends StatelessWidget {
   PomodoroComp({Key? key, required this.lang}) : super(key: key);
@@ -12,6 +13,7 @@ class PomodoroComp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppAssets _appAssets = AppAssets();
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -50,7 +52,7 @@ class PomodoroComp extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         SvgPicture.asset(
-                          'lib/Assets/icons/pauseicon.svg',
+                          _appAssets.pause_icon,
                           width: 12,
                         ),
                         Text(
@@ -88,7 +90,7 @@ class PomodoroComp extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         SvgPicture.asset(
-                          'lib/Assets/icons/stopicon.svg',
+                          _appAssets.stop_icon,
                           width: 12,
                         ),
                         Text(
