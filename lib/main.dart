@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:pomodoro_app/constants/app_colors.dart';
 import 'package:provider/provider.dart';
 
 import 'Extentions/codegen_loader.g.dart';
@@ -54,15 +55,11 @@ class PomodoroApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           appBarTheme: AppBarTheme(
-            color: HexColor('#5F5FFF'),
+            color: purpleblue,
             elevation: 0,
           ),
-          progressIndicatorTheme:
-              ProgressIndicatorThemeData(color: Colors.grey.shade300),
-          // Progress Border
-          secondaryHeaderColor: HexColor('#D047FF'),
           brightness: Brightness.light,
-          scaffoldBackgroundColor: HexColor('#5F5FFF'),
+          scaffoldBackgroundColor: purpleblue,
         ),
         home: const HomeScreen(),
       ),
