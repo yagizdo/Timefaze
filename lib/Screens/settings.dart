@@ -18,12 +18,9 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  var themeM = 'light';
   @override
   void initState() {
     super.initState();
-    //ThemeProvider().readData().then((value) => themeM = value);
-    //Provider.of<ThemeProvider>(context,listen: false).dataCek();
   }
 
   @override
@@ -87,8 +84,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Widget settingsAppBar(BuildContext context) {
     return SliderAppBar(
-      trailing: Consumer<ThemeProvider>(builder: (context, theme, child) {
-        return IconButton(
+      trailing: IconButton(
           onPressed: () {
            //Provider.of<ThemeProvider>(context,listen: false).toggleTheme();
             print('tiklandi');
@@ -98,8 +94,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   size: 25.w,
                   color: Colors.white,
                 )
-        );
-      }),
+        ),
       appBarPadding: EdgeInsets.only(top: 30.h),
       appBarHeight: 60.w,
       title: const Text(''),
