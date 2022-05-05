@@ -2,12 +2,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/constants/app_colors.dart';
-import 'package:provider/provider.dart';
+import 'package:pomodoro_app/main_screen.dart';
 
 import 'Extentions/codegen_loader.g.dart';
-import 'Screens/homescreen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -61,7 +59,7 @@ class PomodoroApp extends StatelessWidget {
           brightness: Brightness.light,
           scaffoldBackgroundColor: purpleblue,
         ),
-        home: const HomeScreen(),
+        home: const MainScreen(),
       ),
     );
   }

@@ -1,13 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Widgets/Settings/settings_list.dart';
 
 import '../Extentions/locale_keys.g.dart';
-import '../Widgets/HomeScreen/drawer_menu.dart';
 import '../Widgets/Settings/profile_comp.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -26,10 +24,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SliderDrawer(
-        appBar: settingsAppBar(context),
-        slider: const DrawerMenu(),
-        child: Column(
+      body: Column(
           children: [
             Expanded(
               flex: 2,
@@ -78,17 +73,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget settingsAppBar(BuildContext context) {
-    return SliderAppBar(
-      appBarPadding: EdgeInsets.only(top: 30.h),
-      appBarHeight: 60.w,
-      title: const Text(''),
-      drawerIconColor: Colors.white,
-      appBarColor: Theme.of(context).appBarTheme.backgroundColor!,
     );
   }
 }
