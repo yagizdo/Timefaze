@@ -43,6 +43,8 @@ class ThemeProvider with ChangeNotifier {
     scaffoldBackgroundColor: HexColor('#5F5FFF'),
   );
 
+  //
+
   // methods for shared preferences
    initSharedPreferences() async {
     // sharedPreferences = await SharedPreferences.getInstance();
