@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import '../../../constants/app_assets.dart';
+
 class TaskCard extends StatefulWidget {
   TaskCard(
       {Key? key,
@@ -29,6 +31,7 @@ class _TaskCardState extends State<TaskCard> {
 
   @override
   Widget build(BuildContext context) {
+    AppAssets _appAssets = AppAssets();
     return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -79,8 +82,11 @@ class _TaskCardState extends State<TaskCard> {
                       .scaffoldBackgroundColor
                       .withOpacity(0.2),
                   onPressed: () {},
-                  child: Icon(Icons.play_arrow,
-                      color: Theme.of(context).scaffoldBackgroundColor),
+                  child: SvgPicture.asset(
+                    _appAssets.start_icon,
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    width: 10.w,
+                  ),
                 )
               // Restart Button
               : MaterialButton(
@@ -89,7 +95,7 @@ class _TaskCardState extends State<TaskCard> {
                   color: HexColor('#FFBF5F').withOpacity(0.2),
                   onPressed: () {},
                   child: SvgPicture.asset(
-                    'lib/Assets/icons/againicon.svg',
+                    _appAssets.restart_icon,
                     width: 18.w,
                     placeholderBuilder: (BuildContext context) => Container(
                       child: const CircularProgressIndicator(),

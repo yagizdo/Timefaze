@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Extentions/locale_keys.g.dart';
 import 'package:pomodoro_app/Widgets/HomeScreen/tasks_section/task_card.dart';
+import 'package:pomodoro_app/constants/app_assets.dart';
 
 class TasksList extends StatelessWidget {
   const TasksList({Key? key}) : super(key: key);
