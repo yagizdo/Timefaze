@@ -5,10 +5,8 @@ import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Widgets/Settings/settings_list.dart';
-import 'package:provider/provider.dart';
 
 import '../Extentions/locale_keys.g.dart';
-import '../Providers/theme_provider.dart';
 import '../Widgets/HomeScreen/drawer_menu.dart';
 import '../Widgets/Settings/profile_comp.dart';
 
@@ -20,12 +18,9 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  var themeM = 'light';
   @override
   void initState() {
     super.initState();
-    //ThemeProvider().readData().then((value) => themeM = value);
-    //Provider.of<ThemeProvider>(context,listen: false).dataCek();
   }
 
   @override
@@ -89,19 +84,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Widget settingsAppBar(BuildContext context) {
     return SliderAppBar(
-      trailing: Consumer<ThemeProvider>(builder: (context, theme, child) {
-        return IconButton(
-          onPressed: () {
-           //Provider.of<ThemeProvider>(context,listen: false).toggleTheme();
-            print('tiklandi');
-          },
-          icon: Icon(
-                  Icons.wb_sunny,
-                  size: 25.w,
-                  color: Colors.white,
-                )
-        );
-      }),
       appBarPadding: EdgeInsets.only(top: 30.h),
       appBarHeight: 60.w,
       title: const Text(''),

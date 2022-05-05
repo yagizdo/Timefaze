@@ -4,9 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:pomodoro_app/Widgets/HomeScreen/drawer_menu.dart';
-import 'package:provider/provider.dart';
 
-import '../Providers/theme_provider.dart';
 import '../Widgets/HomeScreen/pomodoro_timer_comp.dart';
 import '../Widgets/HomeScreen/tasks_section/tasks_list.dart';
 
@@ -19,13 +17,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late final String defaultLocale;
-  var themeM = 'light';
-  @override
   void initState() {
     super.initState();
     defaultLocale = Platform.localeName;
-    //Provider.of<ThemeProvider>(context,listen: false).initSharedPreferences();
-    //ThemeProvider().readData().then((value) => themeM = value);
   }
 
   @override
@@ -36,8 +30,6 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: FloatingActionButton(
         elevation: 0,
         onPressed: () {
-          Provider.of<ThemeProvider>(context,listen: false).toggleTheme();
-
         },
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         child: Icon(
@@ -47,23 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: SliderDrawer(
         appBar: SliderAppBar(
-          trailing: Consumer<ThemeProvider>(builder: (context, theme, child) {
-            return IconButton(
-              onPressed: () {
-              },
-              icon: themeM == 'dark'
-                  ? Icon(
-                      Icons.wb_sunny,
-                      size: 25.w,
-                      color: Colors.white,
-                    )
-                  : Icon(
-                      Icons.dark_mode_outlined,
-                      size: 25.w,
-                      color: Colors.white,
-                    ),
-            );
-          }),
           appBarPadding: EdgeInsets.only(
             top: 30.h, /*left: 15.w*/
           ),
