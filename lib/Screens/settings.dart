@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:pomodoro_app/Widgets/Settings/settings_list.dart';
@@ -74,16 +73,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
           ],
         ),
-    );
-  }
-
-  Widget settingsAppBar(BuildContext context) {
-    return SliderAppBar(
-      appBarPadding: EdgeInsets.only(top: 30.h),
-      appBarHeight: 60.w,
-      title: const Text(''),
-      drawerIconColor: Colors.white,
-      appBarColor: Theme.of(context).appBarTheme.backgroundColor!,
     );
   }
 }
